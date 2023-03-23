@@ -1,0 +1,206 @@
+:root {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary-color: #7c3aed;
+  --primary-hover: #9f67ff;
+  --title: #1e293b;
+  --text: #475569;
+  --placeholder: #94a3b8;
+  --background: #f8fafc;
+  --border: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+
+  background-color: var(--background);
+}
+
+.flex {
+  display: flex;
+}
+
+#page {
+  height: 100vh;
+}
+
+#page > * {
+  width: 50%;
+}
+
+#page > div {
+  padding: 4rem 11.2rem;
+}
+
+img[alt='Vertigo Logo'] {
+  width: 16rem;
+  height: 5.4rem;
+
+  margin-bottom: 11.4rem;
+}
+
+img[alt='Imagem lateral'] {
+  width: 100%;
+  object-fit: cover;
+}
+
+img[alt='eye-button'] {
+  width: 2rem;
+  height: 2rem;
+}
+
+main {
+  max-width: 38.4rem;
+}
+
+.headline {
+  max-width: 35.1rem;
+  margin-bottom: 4rem;
+}
+
+.headline h1 {
+  margin-bottom: 1.6rem;
+
+  font-size: 3.6rem;
+  line-height: 5.5rem;
+  color: var(--title);
+}
+
+.headline p {
+  line-height: 2.4rem;
+  color: var(--text);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  top: 55%;
+  right: 5%;
+}
+
+input:disabled {
+  opacity: 0.35;
+}
+
+.hide {
+  display: none;
+}
+
+.input-group + .input-group {
+  margin-top: 1.6rem;
+}
+
+.input-group label {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  color: var(--title);
+}
+
+.input-group input {
+  height: 5.2rem;
+  padding: 1.6rem 1.2rem;
+
+  border: 0.1rem solid var(--border);
+  border-radius: 0.4rem;
+
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: var(--title);
+}
+
+.input-group input:hover,
+.input-group input:focus {
+  border: 0.1rem solid var(--primary-color);
+  outline: 0;
+}
+
+.input-group input::placeholder {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: var(--placeholder);
+}
+
+.input-group:nth-child(2) div {
+  display: flex;
+  justify-content: space-between;
+}
+
+label + a {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+label + a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+button[type='submit'] {
+  width: 100%;
+  height: 5.6rem;
+
+  margin-block: 3.2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--primary-color);
+  border-radius: 0.4rem;
+  border: none;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: #fff;
+
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button[type='submit']:hover {
+  background-color: var(--primary-hover);
+}
+
+p.footer {
+  line-height: 2.4rem;
+  color: var(--text);
+}
+
+p.footer a {
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+p.footer a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+p.footer a:hover,
+p.footer a:focus {
+  color: var(--primary-hover);
+}
