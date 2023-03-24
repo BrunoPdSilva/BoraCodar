@@ -3,6 +3,8 @@
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  background-color: var(--background);
 
   --primary-color: #7c3aed;
   --primary-hover: #9f67ff;
@@ -11,6 +13,11 @@
   --placeholder: #94a3b8;
   --background: #f8fafc;
   --border: #e2e8f0;
+  --error: #ED3A5A
+}
+
+::-ms-reveal {
+  display: none;
 }
 
 * {
@@ -21,16 +28,11 @@
 
 body {
   font-size: 1.6rem;
-
-  background-color: var(--background);
-}
-
-.flex {
-  display: flex;
 }
 
 #page {
   height: 100vh;
+  display: flex;
 }
 
 #page > * {
@@ -88,20 +90,6 @@ main {
   position: relative;
 }
 
-.eye {
-  position: absolute;
-  top: 55%;
-  right: 5%;
-}
-
-input:disabled {
-  opacity: 0.35;
-}
-
-.hide {
-  display: none;
-}
-
 .input-group + .input-group {
   margin-top: 1.6rem;
 }
@@ -123,6 +111,10 @@ input:disabled {
   font-size: 1.4rem;
   line-height: 2.1rem;
   color: var(--title);
+}
+
+.input-group input.input-error {
+  border: 0.1rem solid var(--error);
 }
 
 .input-group input:hover,
@@ -154,6 +146,40 @@ label + a {
 label + a:hover {
   color: var(--primary-hover);
   text-decoration: underline;
+}
+
+.eye {
+  position: absolute;
+  top: 55%;
+  right: 5%;
+}
+
+.hide {
+  display: none;
+}
+
+.email-error {
+  position: absolute;
+  right: 0;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  color: var(--error);
+}
+
+.password-error {
+  position: absolute;
+  top: 8.5rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  color: var(--error);
+}
+
+input:disabled {
+  opacity: 0.35;
 }
 
 button[type='submit'] {

@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div id="page" class="flex">
+  <div id="page">
     <div>
       <main>
         <img src="./assets/logo.svg" alt="Vertigo Logo">
@@ -26,6 +26,7 @@
         <form>
           <div class="input-group">
             <label for="email">E-mail</label>
+            <p class="email-error hide">E-mail invalido</p>
             <input type="email" id="email" placeholder="Digite seu e-mail">
           </div>
           <div class="input-group">
@@ -34,9 +35,10 @@
               <a href="#">Esqueceu a senha?</a>
             </div>
             <input type="password" id="password" placeholder="Digite sua senha">
+            <p class="password-error hide">Senha incorreta</p>
 
-            <img onclick="togglePassword()" src="./assets/eye-open.svg" alt="eye-button" class="eye">
-            <img onclick="togglePassword()" src="./assets/eye-closed.svg" alt="eye-button" class="eye hide">
+            <img onclick="toggleShowPassword()" src="./assets/eye-open.svg" alt="eye-button" class="eye">
+            <img onclick="toggleShowPassword()" src="./assets/eye-closed.svg" alt="eye-button" class="eye hide">
           </div>
 
           <button type="submit">Entrar</button>
