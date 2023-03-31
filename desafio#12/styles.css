@@ -179,7 +179,11 @@ img[alt='Foto do usuário'] {
   gap: 1.6rem;
 }
 
-.search-container > button {
+.search-container .filter {
+  position: relative;
+}
+
+.search-container .filter button {
   padding: 1.2rem 3.2rem;
 
   display: flex;
@@ -199,8 +203,61 @@ img[alt='Foto do usuário'] {
   transition: 0.3s ease-in;
 }
 
-.search-container > button:hover {
+.search-container .filter button:hover {
   filter: brightness(1.1);
+}
+
+.search-container .filter ul {
+  width: 13.2rem;
+  min-height: 4rem;
+
+  display: none;
+
+  margin-top: 1.2rem;
+  padding-block: 1.2rem;
+
+  box-shadow: 0 0.4rem 1.6rem rgba(22, 22, 22, 0.1);
+  background-color: var(--primary);
+  border-radius: 0.8rem;
+
+  position: absolute;
+  z-index: 9999;
+
+  align-items: center;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dropdown-active {
+  display: flex !important;
+}
+
+.search-container .filter ul::before {
+  content: '';
+
+  width: 2rem;
+  height: 2rem;
+
+  position: absolute;
+  z-index: -1;
+  top: 0;
+
+  background-color: var(--primary);
+  transform: rotate(45deg);
+}
+
+.search-container .filter ul li {
+  padding: 0.4rem 0.8rem;
+
+  background-color: var(--tag-bg);
+  border-radius: 0.8rem;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 130%;
+  color: var(--primary);
+
+  cursor: pointer;
 }
 
 .search-bar {
@@ -272,6 +329,7 @@ img[alt='Foto do usuário'] {
 
   height: calc(100vh - 280px);
   overflow-y: auto;
+  overflow-x: hidden;
 
   padding-block: 1.6rem;
   padding-inline: 2.4rem;
@@ -280,12 +338,12 @@ img[alt='Foto do usuário'] {
 }
 
 .cards-section .card-column .cards-container::-webkit-scrollbar {
-  width: 10px;
+  width: 4px;
 }
 
 .cards-section .card-column .cards-container::-webkit-scrollbar-thumb {
   background-color: var(--tag-bg); /* Cor do polegar da scrollbar */
-  border-radius: .6rem;
+  border-radius: 0.6rem;
 }
 
 .cards-section .card-column .cards-container::-webkit-scrollbar-track {
@@ -293,9 +351,9 @@ img[alt='Foto do usuário'] {
 }
 
 .cards-section .card-column .card {
+  width: 32rem;
   min-height: 15.2rem;
   padding: 2.4rem;
-
 
   border-radius: 0.8rem;
   background-color: #ffffff;
@@ -304,6 +362,13 @@ img[alt='Foto do usuário'] {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  cursor: grab;
+  transition: 0.3s ease-in;
+}
+
+.cards-section .card-column .card:hover {
+  transform: scale(1.03);
 }
 
 .cards-section .card-column .card p {
