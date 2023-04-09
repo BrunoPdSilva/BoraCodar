@@ -175,6 +175,8 @@ section.files {
 
   display: grid;
   place-items: center;
+
+  height: fit-content;
 }
 
 .upload-progress {
@@ -195,12 +197,16 @@ section.files {
 }
 
 .upload-progress .progress {
-  width: 46%;
   height: 100%;
 
   background-image: var(--ongoing);
   border-radius: 999px;
 }
+
+.upload-progress .progress.animate {
+  animation: upload-animation 2s forwards;
+}
+
 
 .upload-progress .progress.success {
   background-image: none;
@@ -214,4 +220,28 @@ section.files {
 
 .upload-progress .progress-percent {
   width: 3.2rem;
+}
+
+.reload.spin {
+  animation: spin 1.3s infinite linear;
+}
+
+@keyframes upload-animation {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: var(--width);
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: -360deg;
+  }
 }

@@ -41,7 +41,7 @@
               <span>30 MB / 74 MB</span>
             </div>
 
-            <button>
+            <button class="close">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16.8538 16.1462C16.9002 16.1927 16.9371 16.2479 16.9622 16.3085C16.9873 16.3692 17.0003 16.4343 17.0003 16.5C17.0003 16.5657 16.9873 16.6307 16.9622 16.6914C16.9371 16.7521 16.9002 16.8073 16.8538 16.8537C16.8073 16.9002 16.7521 16.9371 16.6915 16.9622C16.6308 16.9873 16.5657 17.0003 16.5 17.0003C16.4343 17.0003 16.3693 16.9873 16.3086 16.9622C16.2479 16.9371 16.1927 16.9002 16.1463 16.8537L12 12.7069L7.85375 16.8537C7.75993 16.9476 7.63269 17.0003 7.5 17.0003C7.36732 17.0003 7.24007 16.9476 7.14625 16.8537C7.05243 16.7599 6.99973 16.6327 6.99973 16.5C6.99973 16.3673 7.05243 16.2401 7.14625 16.1462L11.2931 12L7.14625 7.85375C7.05243 7.75993 6.99973 7.63268 6.99973 7.5C6.99973 7.36732 7.05243 7.24007 7.14625 7.14625C7.24007 7.05243 7.36732 6.99972 7.5 6.99972C7.63269 6.99972 7.75993 7.05243 7.85375 7.14625L12 11.2931L16.1463 7.14625C16.2401 7.05243 16.3673 6.99972 16.5 6.99972C16.6327 6.99972 16.7599 7.05243 16.8538 7.14625C16.9476 7.24007 17.0003 7.36732 17.0003 7.5C17.0003 7.63268 16.9476 7.75993 16.8538 7.85375L12.7069 12L16.8538 16.1462Z"
@@ -52,7 +52,7 @@
 
           <div class="upload-progress">
             <div class="progress-bar">
-              <div class="progress"></div>
+              <div class="progress animate" style="--width: 46%"></div>
             </div>
 
             <span class="progress-percent">46%</span>
@@ -71,14 +71,14 @@
         <div class="file-info">
           <div class="file-data">
             <div>
-              <h3>Scann_158.pdf</h3>
-              <span>30 MB / 74 MB</span>
+              <h3>README.rm</h3>
+              <span>12 KB</span>
             </div>
           </div>
 
           <div class="upload-progress">
             <div class="progress-bar">
-              <div class="progress success" style="width: 100%;"></div>
+              <div class="progress animate success" style="--width: 100%"></div>
             </div>
 
             <span class="progress-percent">100%</span>
@@ -97,11 +97,11 @@
         <div class="file-info">
           <div class="file-data">
             <div>
-              <h3>Scann_158.pdf</h3>
-              <span>30 MB / 74 MB</span>
+              <h3>picture1.jpeg</h3>
+              <span>6.3 MB</span>
             </div>
 
-            <button>
+            <button class="reload">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M6.5 7C6.77615 7 7 7.22386 7 7.5V10H9.5C9.77615 10 10 10.2239 10 10.5C10 10.7761 9.77615 11 9.5 11H6.5C6.22386 11 6 10.7761 6 10.5V7.5C6 7.22386 6.22386 7 6.5 7Z"
@@ -122,6 +122,8 @@
       </div>
     </section>
   </div>
+
+  <script src="./app.js"></script>
 </body>
 
 </html>
