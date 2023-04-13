@@ -3,14 +3,189 @@
   font-family: 'Titillium Web', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --background: #f8fafc;
+  --orange: #fba94c;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
   font-size: 1.6rem;
+}
+
+#App {
+  min-height: 100vh;
+  background-color: var(--background);
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(32rem, 38.4rem));
+  grid-template-rows: minmax(28.2rem, 45.4rem);
+  place-content: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+.card {
+  --card-bg: #ffffff;
+  --title: #1e293b;
+  --text: #475569;
+  --primary: #7c3aed;
+  --green: #1b873f;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 4.8rem 3.2rem;
+
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  border: 0.1rem solid #e2e8f0;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.card .product {
+  margin-block: 0.8rem 3.2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--title);
+}
+
+.card .product h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 4.9rem;
+}
+
+.card .product p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.7rem;
+}
+
+.card .product p span {
+  font-weight: 400;
+}
+
+.card button {
+  width: 100%;
+  height: 5.6rem;
+
+  padding: 1.6rem 2.4rem;
+
+  background: none;
+  border: 0.1rem solid var(--title);
+  border-radius: 0.4rem;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: var(--title);
+}
+
+.card .divisory {
+  width: 100%;
+  height: 0.1rem;
+  margin-block: 3.2rem;
+
+  background-color: #e2e8f0;
+}
+
+.card ul {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.card li {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card li div {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.card li span {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+}
+
+.card li i.ph-check {
+  color: var(--green);
+}
+
+.card li i.ph-info {
+  color: var(--text);
+}
+
+/* $ ADVANTAGE CARD */
+
+.card.advantage {
+  --card-bg: #0f172a;
+  --title: #fff;
+  --text: #cbd5e1;
+  --primary: #996dff;
+  --green: #04d361;
+}
+
+.card.advantage {
+  position: relative;
+}
+
+.card.advantage button {
+  background-color: var(--primary);
+  border: none;
+}
+
+.card.advantage .divisory {
+  background-color: #334155;
+}
+
+.card.advantage::before {
+  content: 'Mais vantajoso';
+
+  padding: 0.8rem 1.6rem;
+
+  background-color: var(--orange);
+  border-radius: 0.6rem;
+
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--card-bg-dark);
+
+  position: absolute;
+  top: -3.7%;
+  left: 50%;
+
+  transform: translateX(-50%);
 }
