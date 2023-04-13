@@ -24,3 +24,4 @@ closeButtons.forEach(button => {
 reloadButtons.forEach(button => {
   button.addEventListener('click', reloadActive);
 });
+

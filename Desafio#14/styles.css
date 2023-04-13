@@ -207,7 +207,6 @@ section.files {
   animation: upload-animation 2s forwards;
 }
 
-
 .upload-progress .progress.success {
   background-image: none;
   background-color: var(--success);
