@@ -1,13 +1,17 @@
-import Foto from '../assets/Foto.png';
+interface Props {
+  name: string;
+  number: string;
+  photo: string;
+}
 
-export function Contact() {
+export function Contact({ name, number, photo }: Props) {
   return (
     <li>
-      <img src={Foto} alt="User picture" />
+      <img src={photo} alt="User picture" />
 
       <div className="contactInfo">
-        <h2>Abraão Sena</h2>
-        <p>(11) 90876-1234</p>
+        <h2>{name}</h2>
+        <p>{number}</p>
       </div>
     </li>
   )

@@ -1,3 +1,5 @@
+import { contactList, lettersList } from '../data/dataBase';
+
 import Foto1 from '../assets/Foto-1.png';
 import Foto2 from '../assets/Foto-2.png';
 import Foto3 from '../assets/Foto-3.png';
@@ -7,18 +9,24 @@ import Foto5 from '../assets/Foto-5.png';
 import '../styles/ContactList.css';
 import { Contact } from './Contact';
 
+const abrao = contactList[0];
+
 export function ContactList() {
   return (
     <div className="ContactList">
       <section>
-        <h2 className="letter" style={{ backgroundColor: "#633BBC" }}>A</h2>
+        <h2 className="letter" style={{ backgroundColor: '#633BBC' }}>
+          A
+        </h2>
 
         <ul>
-          <Contact />
+          <Contact name={abrao.name} number={abrao.number} photo={abrao.photo} />
         </ul>
       </section>
       <section>
-        <h2 className="letter" style={{ backgroundColor: "#07847E" }}>B</h2>
+        <h2 className="letter" style={{ backgroundColor: '#07847E' }}>
+          B
+        </h2>
 
         <ul>
           <li>
@@ -40,7 +48,9 @@ export function ContactList() {
         </ul>
       </section>
       <section>
-        <h2 className="letter" style={{ backgroundColor: "#9A00B3" }}>C</h2>
+        <h2 className="letter" style={{ backgroundColor: '#9A00B3' }}>
+          C
+        </h2>
 
         <ul>
           <li>
@@ -62,7 +72,9 @@ export function ContactList() {
         </ul>
       </section>
       <section>
-        <h2 className="letter" style={{ backgroundColor: "#0088B3" }}>D</h2>
+        <h2 className="letter" style={{ backgroundColor: '#0088B3' }}>
+          D
+        </h2>
 
         <ul>
           <li>
@@ -76,5 +88,5 @@ export function ContactList() {
         </ul>
       </section>
     </div>
-  )
+  );
 }
