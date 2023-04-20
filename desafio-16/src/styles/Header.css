@@ -1,0 +1,58 @@
+.Header {
+  padding: 4rem;
+  background-color: var(--header-bg);
+}
+
+.Header section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+
+  margin-bottom: 2.4rem;
+}
+
+.Header section ul {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.Header section ul li button {
+  background: none;
+  border: none;
+}
+
+.Header button:hover svg {
+  filter: brightness(0.8);
+}
+
+.Header label {
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--input-bg);
+  border-radius: 0.5rem;
+}
+
+.Header label button {
+  height: 100%;
+
+  margin-inline: 2.4rem 1rem;
+  background: none;
+  border: none;
+
+  display: grid;
+  place-items: center;
+}
+
+.Header label input {
+  height: 100%;
+  width: 100%;
+
+  background: none;
+  border: none;
+  outline: none;
+}
