@@ -11,6 +11,10 @@ interface Contact {
   photo: string;
 }
 
+interface Colors {
+  [key: string]: string;
+}
+
 export const contactList: Contact[] = [
   { name: 'Abraão Sena', number: '(11) 90876-1234', photo: Foto0 },
   { name: 'Beatriz Clasen', number: '(48) 90876-1123', photo: Foto1 },
@@ -18,6 +22,25 @@ export const contactList: Contact[] = [
   { name: 'Caio Vinícius', number: '(71) 90876-2435', photo: Foto3 },
   { name: 'Cleiton Souza', number: '(11) 90876-1209', photo: Foto4 },
   { name: 'Daniel Duarte', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'E', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'F', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'G', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'K', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'L', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'M', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'N', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'O', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'P', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'Q', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'R', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'S', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'T', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'U', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'V', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'W', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'X', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'Y', number: '(82) 90876-6534', photo: Foto5 },
+  { name: 'Z', number: '(82) 90876-6534', photo: Foto5 },
 ];
 
 function getInitialLetters(contacts: Contact[]) {
@@ -27,3 +50,32 @@ function getInitialLetters(contacts: Contact[]) {
 }
 
 export const lettersList = getInitialLetters(contactList);
+
+export const colors: Colors = {
+  A: '#633BBC',
+  B: '#07847E',
+  C: '#9A00B3',
+  D: '#0088B3',
+  E: '#D81B60',
+  F: '#388E3C',
+  G: '#F57C00',
+  H: '#283593',
+  I: '#E65100',
+  J: '#4A148C',
+  K: '#0097A7',
+  L: '#FBC02D',
+  M: '#7B1FA2',
+  N: '#424242',
+  O: '#C62828',
+  P: '#455A64',
+  Q: '#AFB42B',
+  R: '#EF9A9A',
+  S: '#FF9800',
+  T: '#757575',
+  U: '#9E9E9E',
+  V: '#D32F2F',
+  W: '#8E24AA',
+  X: '#1565C0',
+  Y: '#FF6F00',
+  Z: '#1A237E',
+};
