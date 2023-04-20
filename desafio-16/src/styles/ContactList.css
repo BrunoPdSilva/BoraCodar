@@ -1,0 +1,60 @@
+.ContactList {
+  width: 35rem;
+  height: 49rem;
+  margin: 4.8rem 0 3rem 4rem;
+  overflow-y: scroll;
+}
+
+.ContactList::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+.ContactList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ContactList::-webkit-scrollbar-thumb {
+  width: 0.8rem;
+  background-color: var(--scroll);
+  border-radius: 999.9rem;
+}
+
+.ContactList section {
+  display: flex;
+}
+
+.ContactList section:not(:last-child) {
+  margin-bottom: 5.6rem;
+}
+
+.ContactList section .letter {
+  width: 4rem;
+  height: 4rem;
+
+  margin-right: 5.2rem;
+
+  border-radius: 0.8rem;
+
+  display: grid;
+  place-items: center;
+}
+
+.ContactList section ul li:not(:last-child) {
+  margin-bottom: 3.2rem;
+}
+
+.ContactList section ul li {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  cursor: pointer;
+}
+
+.ContactList section ul li:hover {
+  transform: scale(1.03);
+}
+
+.ContactList section ul li .contactInfo {
+  margin-bottom: 0.4rem;
+}
