@@ -1,0 +1,27 @@
+:root {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --title: #e1e1e6;
+  --text: #8c8cba;
+  --header-bg: #16151e;
+  --contact-list-bg: #1a1924;
+  --input-bg: #24243d;
+  --scroll: #16151e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+}
+
+button {  
+  cursor: pointer;
+}
