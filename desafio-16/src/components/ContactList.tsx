@@ -21,7 +21,7 @@ export function ContactList({ filter }: Props) {
 
           <ul>
             {contacts.map(contact => {
-              if (contact.name[0] === letter) {
+              if (contact.name[0].toUpperCase() === letter) {
                 return <Contact key={contact.number} name={contact.name} number={contact.number} photo={contact.photo}/>
               }
             })}

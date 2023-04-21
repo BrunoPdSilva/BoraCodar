@@ -22,29 +22,10 @@ export const contactList: Contact[] = [
   { name: 'Caio Vinícius', number: '(71) 90876-2435', photo: Foto3 },
   { name: 'Cleiton Souza', number: '(11) 90876-1209', photo: Foto4 },
   { name: 'Daniel Duarte', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'E', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'F', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'G', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'K', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'L', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'M', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'N', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'O', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'P', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'Q', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'R', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'S', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'T', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'U', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'V', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'W', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'X', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'Y', number: '(82) 90876-6534', photo: Foto5 },
-  { name: 'Z', number: '(82) 90876-6534', photo: Foto5 },
 ];
 
 export function getInitialLetters(contacts: Contact[]) {
-  const initials = contacts.map(contact => contact.name[0]);
+  const initials = contacts.map(contact => contact.name[0].toUpperCase());
 
   return [...new Set([...initials])];
 }
