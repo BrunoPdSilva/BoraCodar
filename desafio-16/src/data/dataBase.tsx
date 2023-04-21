@@ -43,13 +43,11 @@ export const contactList: Contact[] = [
   { name: 'Z', number: '(82) 90876-6534', photo: Foto5 },
 ];
 
-function getInitialLetters(contacts: Contact[]) {
+export function getInitialLetters(contacts: Contact[]) {
   const initials = contacts.map(contact => contact.name[0]);
 
   return [...new Set([...initials])];
 }
-
-export const lettersList = getInitialLetters(contactList);
 
 export const colors: Colors = {
   A: '#633BBC',

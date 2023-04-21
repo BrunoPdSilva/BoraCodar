@@ -1,20 +1,28 @@
-import { contactList, lettersList, colors } from '../data/dataBase';
+import { contactList, getInitialLetters, colors } from '../data/dataBase';
 
 import { Contact } from './Contact';
 
 import '../styles/ContactList.css';
 
-export function ContactList() {
+interface Props {
+  filter: string;
+}
+
+export function ContactList({ filter }: Props) {
+  const contacts = contactList.filter(contact => contact.name.includes(filter) || contact.number.includes(filter));
+
+  const lettersList = getInitialLetters(contacts);
+
   return (
     <div className="ContactList">
       {lettersList.map(letter => (
-        <section>
+        <section key={letter}>
           <h2 className="letter" style={{ backgroundColor: colors[letter] }}>{letter}</h2>
 
           <ul>
-            {contactList.map(contact => {
+            {contacts.map(contact => {
               if (contact.name[0] === letter) {
-                return <Contact name={contact.name} number={contact.number} photo={contact.photo}/>
+                return <Contact key={contact.number} name={contact.name} number={contact.number} photo={contact.photo}/>
               }
             })}
           </ul>

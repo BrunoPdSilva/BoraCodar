@@ -1,6 +1,11 @@
+import { Dispatch, SetStateAction } from 'react';
 import '../styles/Header.css';
 
-export function Header() {
+interface Props {
+  setFilter: Dispatch<SetStateAction<string>>;
+}
+
+export function Header({ setFilter }: Props) {
   return (
     <div className="Header">
       <section>
@@ -87,6 +92,7 @@ export function Header() {
           type="text"
           id="search"
           placeholder="Busque por nome ou por dados de contato..."
+          onChange={e => setFilter(e.target.value.trim())}
         />
       </label>
     </div>
