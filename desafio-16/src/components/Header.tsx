@@ -3,9 +3,10 @@ import '../styles/Header.css';
 
 interface Props {
   setFilter: Dispatch<SetStateAction<string>>;
+  setShowModal: Dispatch<SetStateAction<boolean>>;
 }
 
-export function Header({ setFilter }: Props) {
+export function Header({ setFilter, setShowModal }: Props) {
   return (
     <div className="Header">
       <section>
@@ -13,7 +14,7 @@ export function Header({ setFilter }: Props) {
 
         <ul>
           <li>
-            <button>
+            <button onClick={() => setShowModal(true)}>
               <svg
                 width="24"
                 height="24"

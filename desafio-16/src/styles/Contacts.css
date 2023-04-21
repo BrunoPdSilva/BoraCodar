@@ -6,4 +6,6 @@
   border-radius: .8rem;
 
   overflow: hidden;
+
+  position: relative;
 }

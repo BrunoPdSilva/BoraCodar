@@ -1,0 +1,121 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+
+  background-color: #00000090;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+.AddContactModal {
+  width: 40.5rem;
+  padding: 2.2rem;
+
+  background-color: var(--header-bg);
+  border-radius: 0.6rem;
+}
+
+.AddContactModal .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AddContactModal .header button {
+  background: none;
+  border: none;
+}
+
+.AddContactModal form {
+  width: 100%;
+}
+
+.AddContactModal form > div {
+  margin-block: 2rem;
+
+  display: grid;
+  grid-template-columns: 8.4rem 1fr;
+  align-items: center;
+}
+
+.AddContactModal form div .pictureUpload {
+  width: 7.2rem;
+  height: 7.2rem;
+
+  background-color: #5b5b61;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.AddContactModal form div .pictureUpload:hover {
+  background-color: #515155;
+  transition: 0.3s ease-in-out;
+}
+
+.AddContactModal form div .pictureUpload input {
+  display: none;
+}
+
+.AddContactModal form .input-wrapper {
+  width: 100%;
+
+  display: grid;
+  gap: 1.2rem;
+}
+
+.AddContactModal form .input-wrapper label {
+  max-width: 27.7rem;
+  width: 100%;
+  height: 4rem;
+
+  padding-left: 1.6rem;
+
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  background-color: var(--input-bg);
+  border-radius: 0.5rem;
+}
+
+.AddContactModal form .input-wrapper label input {
+  height: 100%;
+  width: 100%;
+
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.AddContactModal form button {
+  width: 100%;
+  height: 4.2rem;
+
+  border-radius: 0.6rem;
+  border: 0.2rem solid var(--title);
+  background: none;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  color: var(--title);
+
+  transition: 0.3s ease-in-out;
+}
+
+.AddContactModal form button:focus-visible,
+.AddContactModal form button:hover {
+  background-color: #633bbc;
+  border: 0.2rem solid #633bbc;
+  transition: 0.3s ease-in-out;
+}
