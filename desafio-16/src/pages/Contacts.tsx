@@ -7,15 +7,15 @@ import { AddContact } from '../components/AddContact';
 import '../styles/Contacts.css';
 
 export function Contacts() {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [filter, setFilter] = useState('');
 
   return (
     <div id="Contacts">
-      <Header setFilter={setFilter} setShowModal={setShowModal}/>
+      <Header setFilter={setFilter} setShowModal={setShowModal} />
       <ContactList filter={filter} />
 
-      {showModal && <AddContact setShowModal={setShowModal}/>}
+      {showModal && <AddContact setShowModal={setShowModal} />}
     </div>
   );
 }

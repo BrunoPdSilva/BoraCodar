@@ -14,8 +14,9 @@ export function Header({ setFilter, setShowModal }: Props) {
 
         <ul>
           <li>
-            <button onClick={() => setShowModal(true)}>
+            <button className="toggleModal" onClick={() => setShowModal(true)}>
               <svg
+                style={{ pointerEvents: 'none' }}
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
