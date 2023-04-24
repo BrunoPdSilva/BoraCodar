@@ -94,6 +94,7 @@ export function Header({ setFilter, setShowModal }: Props) {
           type="text"
           id="search"
           placeholder="Busque por nome ou por dados de contato..."
+          autoComplete="none"
           onChange={e => setFilter(e.target.value.trim())}
         />
       </label>

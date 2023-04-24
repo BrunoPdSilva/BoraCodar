@@ -1,13 +1,22 @@
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from 'react';
+import { IContact } from '../data/dataBase';
+
 import { X, Camera, IdentificationBadge, Phone } from 'phosphor-react';
+
+import DefaultImage from '../assets/user.png';
 
 import '../styles/AddContact.css';
 
 interface Props {
   setShowModal: Dispatch<SetStateAction<boolean>>;
+  setNewContact: Dispatch<SetStateAction<IContact | null>>;
 }
 
-export function AddContact({ setShowModal }: Props) {
+const initialState: IContact = { name: '', number: '', photo: '' };
+
+export function AddContactModal({ setShowModal, setNewContact }: Props) {
+  const [newContactData, setNewContactData] = useState<IContact>(initialState);
+
   const ref = useRef<HTMLDivElement>(null);
 
   const openbtn = document.querySelector('button.toggleModal');
@@ -22,12 +31,23 @@ export function AddContact({ setShowModal }: Props) {
     }
   }
 
+  function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
+
+    setNewContactData(prevState => ({ ...prevState, [name]: value }));
+  }
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    setNewContact({...newContactData, photo: newContactData.photo || DefaultImage });
+    setNewContactData({ name: '', number: '', photo: '' });
+    setShowModal(false);
+  }
+
   useEffect(() => {
     document.body.addEventListener('click', handleClick);
-
-    return () => {
-      document.body.removeEventListener('click', handleClick);
-    };
+    return () => document.body.removeEventListener('click', handleClick);
   }, []);
 
   return (
@@ -40,11 +60,16 @@ export function AddContact({ setShowModal }: Props) {
           </button>
         </div>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div>
             <label className="pictureUpload">
               <Camera size={32} color="#E1E1E6" />
-              <input type="file" />
+              <input
+                type="file"
+                name="photo"
+                onChange={e => handleInputChange(e)}
+                value={newContactData.photo}
+              />
             </label>
 
             <div className="input-wrapper">
@@ -52,8 +77,11 @@ export function AddContact({ setShowModal }: Props) {
                 <IdentificationBadge size={16} color="#E1E1E6" />
                 <input
                   type="text"
-                  placeholder="Nome do contato..."
+                  name="name"
                   autoComplete="none"
+                  placeholder="Nome do contato..."
+                  onChange={e => handleInputChange(e)}
+                  value={newContactData.name}
                 />
               </label>
 
@@ -61,8 +89,11 @@ export function AddContact({ setShowModal }: Props) {
                 <Phone size={16} color="#E1E1E6" />
                 <input
                   type="text"
-                  placeholder="Número..."
+                  name="number"
                   autoComplete="none"
+                  placeholder="Número..."
+                  onChange={e => handleInputChange(e)}
+                  value={newContactData.number}
                 />
               </label>
             </div>

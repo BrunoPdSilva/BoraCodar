@@ -1,4 +1,6 @@
-import { contactList, getInitialLetters, colors } from '../data/dataBase';
+import { contactList, getInitials, IContact } from '../data/dataBase';
+import { colors } from '../utils/colorsFromLetters';
+import { useEffect, useState } from 'react';
 
 import { Contact } from './Contact';
 
@@ -6,23 +8,50 @@ import '../styles/ContactList.css';
 
 interface Props {
   filter: string;
+  newContact: IContact | null;
 }
 
-export function ContactList({ filter }: Props) {
-  const contacts = contactList.filter(contact => contact.name.includes(filter) || contact.number.includes(filter));
+export function ContactList({ filter, newContact }: Props) {
+  const [contacts, setContacts] = useState<IContact[]>(contactList);
 
-  const lettersList = getInitialLetters(contacts);
+  function getContacts(contactList: IContact[]){
+    return contactList.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+      contact.number.includes(filter)
+    )
+  }
+
+  useEffect(() => {
+    setContacts(getContacts(contactList));
+  }, [contactList, filter]);
+
+  useEffect(() => {
+    if (newContact !== null) {
+      setContacts(prevContacts => [...prevContacts, newContact]);
+    }
+  }, [newContact])
+
+  const lettersList = getInitials(contacts);
 
   return (
     <div className="ContactList">
       {lettersList.map(letter => (
         <section key={letter}>
-          <h2 className="letter" style={{ backgroundColor: colors[letter] }}>{letter}</h2>
+          <h2 className="letter" style={{ backgroundColor: colors[letter] }}>
+            {letter}
+          </h2>
 
           <ul>
             {contacts.map(contact => {
               if (contact.name[0].toUpperCase() === letter) {
-                return <Contact key={contact.number} name={contact.name} number={contact.number} photo={contact.photo}/>
+                return (
+                  <Contact
+                    key={contact.number}
+                    name={contact.name}
+                    number={contact.number}
+                    photo={contact.photo}
+                  />
+                );
               }
             })}
           </ul>

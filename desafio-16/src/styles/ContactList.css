@@ -51,6 +51,11 @@
   cursor: pointer;
 }
 
+.ContactList section ul li img {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
 .ContactList section ul li:hover {
   transform: scale(1.03);
 }
