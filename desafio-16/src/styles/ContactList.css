@@ -54,6 +54,8 @@
 .ContactList section ul li img {
   width: 4.8rem;
   height: 4.8rem;
+
+  border-radius: 50%;
 }
 
 .ContactList section ul li:hover {

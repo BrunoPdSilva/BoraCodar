@@ -16,15 +16,14 @@ const initialState: IContact = { name: '', number: '', photo: '' };
 
 export function AddContactModal({ setShowModal, setNewContact }: Props) {
   const [newContactData, setNewContactData] = useState<IContact>(initialState);
+  const [image, setImage] = useState<string | ArrayBuffer | null>(null);
 
   const ref = useRef<HTMLDivElement>(null);
 
   const openbtn = document.querySelector('button.toggleModal');
 
-  function handleClick(e: MouseEvent) {
-    if (openbtn && e.target === openbtn) {
-      return;
-    }
+  function handleClickOutsideModal(e: MouseEvent) {
+    if (openbtn && e.target === openbtn) return;
 
     if (ref.current && !ref.current.contains(e.target as Node)) {
       setShowModal(false);
@@ -37,17 +36,34 @@ export function AddContactModal({ setShowModal, setNewContact }: Props) {
     setNewContactData(prevState => ({ ...prevState, [name]: value }));
   }
 
+  function handleUploadImage(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+
+    if (!file) return;
+    
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      setImage(event.target && event.target.result);
+    };
+    reader.readAsDataURL(file as Blob);
+  }
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
-    setNewContact({...newContactData, photo: newContactData.photo || DefaultImage });
+    setNewContact(prevState => ({
+      ...prevState,
+      photo: image as string || DefaultImage,
+      name: newContactData.name.trim(),
+      number: newContactData.number.trim(),
+    }));
     setNewContactData({ name: '', number: '', photo: '' });
     setShowModal(false);
   }
 
   useEffect(() => {
-    document.body.addEventListener('click', handleClick);
-    return () => document.body.removeEventListener('click', handleClick);
+    document.body.addEventListener('click', handleClickOutsideModal);
+    return () => document.body.removeEventListener('click', handleClickOutsideModal);
   }, []);
 
   return (
@@ -67,12 +83,12 @@ export function AddContactModal({ setShowModal, setNewContact }: Props) {
               <input
                 type="file"
                 name="photo"
-                onChange={e => handleInputChange(e)}
-                value={newContactData.photo}
+                onChange={e => handleUploadImage(e)}
+                value={image as string}
               />
             </label>
 
-            <div className="input-wrapper">
+            <fieldset className="input-wrapper">
               <label>
                 <IdentificationBadge size={16} color="#E1E1E6" />
                 <input
@@ -96,7 +112,7 @@ export function AddContactModal({ setShowModal, setNewContact }: Props) {
                   value={newContactData.number}
                 />
               </label>
-            </div>
+            </fieldset>
           </div>
 
           <button type="submit">Salvar contato</button>
