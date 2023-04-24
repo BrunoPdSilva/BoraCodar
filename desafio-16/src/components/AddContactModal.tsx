@@ -84,7 +84,7 @@ export function AddContactModal({ setShowModal, setNewContact }: Props) {
                 type="file"
                 name="photo"
                 onChange={e => handleUploadImage(e)}
-                value={image as string}
+                value={newContactData.photo}
               />
             </label>
 
