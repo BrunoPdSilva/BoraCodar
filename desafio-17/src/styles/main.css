@@ -1,0 +1,35 @@
+:root {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --primary: #6200ee;
+  --hover: #ece0fd;
+  --white: #ffffff;
+  --background: #f5f5f5;
+  --heading: #333333;
+  --text: #666666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.6rem;
+  font-family: 'Lato', sans-serif;
+  background-color: var(--background);
+  display: grid;
+  place-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
