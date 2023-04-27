@@ -21,7 +21,7 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   font-family: 'Lato', sans-serif;
-  background-color: var(--background);
+  background-color: #0F0F0F;
   display: grid;
   place-items: center;
 }

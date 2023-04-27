@@ -1,22 +1,15 @@
-import { bottomButton, leftButton, rightButton} from './assets/buttons';
-import { NavButton } from './components/NavButton';
+import { Navigation } from './components/Navigation';
+import { Calendar } from './components/Calendar';
 
-import './styles/Calendar.css'
+import './styles/App.css';
 
 function App() {
-
   return (
-    <div id="Calendar">
-      <nav>
-        <NavButton svg={leftButton} category="sideNavigation" />
-        <div>
-          <h1>Abril 2023</h1>
-          <NavButton svg={bottomButton} />
-        </div>
-        <NavButton svg={rightButton} category="sideNavigation" />
-      </nav>
+    <div id="App">
+      <Navigation />
+      <Calendar />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,11 +1,10 @@
 interface Props {
   svg: JSX.Element
-  category?: string
 }
 
-export function NavButton({ svg, category }: Props) {
+export function NavButton({ svg }: Props) {
   return (
-    <button type="button" className={category ?? ""}>
+    <button type="button">
       {svg}
     </button>
   )
