@@ -12,9 +12,9 @@ export function Navigation() {
   
   return (
     <nav>
-      <NavButton svg={leftButton} />
-      <button>{months[today.month()]}, {today.year()}{bottomButton}</button>
-      <NavButton svg={rightButton} />
+      <NavButton svg={leftButton} setToday={setToday} action="minus" today={today} />
+      <button>{months[today.month()]} {today.year()}{bottomButton}</button>
+      <NavButton svg={rightButton} setToday={setToday} action="plus" today={today} />
     </nav>
   );
 }
