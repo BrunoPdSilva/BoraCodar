@@ -1,0 +1,21 @@
+button.toggleTheme {
+  height: 5.2rem;
+  width: 5.2rem;
+
+  background-color: transparent;
+  border: .16rem solid var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+
+  display: grid;
+  place-items: center;
+
+  transition: 0.3s ease-in-out;
+}
+
+button.toggleTheme:hover,
+button:focus-visible {
+  background-color: var(--primary);
+  color: #ffca3a;
+  transition: 0.3s ease-in-out;
+}

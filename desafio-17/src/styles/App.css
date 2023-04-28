@@ -1,11 +1,13 @@
 @import './calendar/Navigation.css';
 @import './calendar/Calendar.css';
+@import './calendar/ToggleTheme.css';
 
 #App {
+  margin-top: 1.6rem;
   padding: 3.2rem;
 
   box-shadow: 0rem 0.8rem 3.2rem rgba(0, 0, 0, 0.16);
-  background-color: var(--white);
+  background-color: var(--card-bg);
   border-radius: 1.6rem;
 }
 
