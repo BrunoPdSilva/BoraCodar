@@ -1,23 +1,17 @@
-import { generateDate, weekDays } from '../utils/calendar';
+import dayjs from 'dayjs';
 
-export function Calendar() {
-  console.log(generateDate());
+import { WeekDays } from './WeekDays';
+import { Days } from './Days';
 
+interface Props {
+  today: dayjs.Dayjs;
+}
+
+export function Calendar({ today }: Props) {
   return (
     <div className="Calendar">
-      <ul className="weekDays">
-        {weekDays.map((day, index) => <li key={index}>{day}</li>)}
-      </ul>
-
-      <ul className="days">
-        {generateDate().map(({ date, currentMonth, today }, index) => {
-          return (
-              <li key={index} className={`${today && "today"} ${!currentMonth && "disabled"}`}>
-                {date.date()}
-              </li>
-            );
-        })}
-      </ul>
+      <WeekDays />
+      <Days today={today} />
     </div>
   );
 }

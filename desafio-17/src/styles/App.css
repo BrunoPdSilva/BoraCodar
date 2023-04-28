@@ -1,9 +1,7 @@
-@import './calendar/navbar.css';
-@import './calendar/calendar.css';
+@import './calendar/Navigation.css';
+@import './calendar/Calendar.css';
 
 #App {
-  width: 34.4rem;
-  min-height: 42.8rem;
   padding: 3.2rem;
 
   box-shadow: 0rem 0.8rem 3.2rem rgba(0, 0, 0, 0.16);

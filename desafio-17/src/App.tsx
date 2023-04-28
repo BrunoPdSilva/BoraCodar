@@ -1,17 +1,19 @@
+import { useState } from 'react';
+import dayjs from 'dayjs';
+
 import { Navigation } from './components/Navigation';
 import { Calendar } from './components/Calendar';
-
-import { generateDate } from './utils/calendar';
 
 import './styles/App.css';
 
 function App() {
-  console.log(generateDate())
+  const currentDate = dayjs();
+  const [today, setToday] = useState(currentDate);
 
   return (
     <div id="App">
-      <Navigation />
-      <Calendar />
+      <Navigation today={today} setToday={setToday} />
+      <Calendar today={today} setToday={setToday} />
     </div>
   );
 }
