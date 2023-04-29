@@ -1,4 +1,4 @@
-import { Moon, Plus, SignOut, Sun } from 'phosphor-react';
+import { CloudMoon, Sun } from 'phosphor-react';
 import { Dispatch, SetStateAction } from 'react';
 
 interface Props {
@@ -8,12 +8,17 @@ interface Props {
 
 export function ToggleTheme({ isLightTheme, setIsLightTheme }: Props) {
   return (
-    <button className="toggleTheme" onClick={() => setIsLightTheme(!isLightTheme)}>
-      {isLightTheme ? (
-        <Moon size={26} weight="fill" />
-      ) : (
-        <Sun size={26} weight="fill" />
-      )}
-    </button>
-  )
+    <div>
+      <input
+        type="checkbox"
+        id="toggleTheme"
+        onChange={e => setIsLightTheme(e.target.checked)}
+        checked={isLightTheme}
+      />
+      <label htmlFor="toggleTheme" className="toggleTheme">
+        <Sun size={32} color="#FFCA3A" weight="bold" />
+        <CloudMoon size={32} color="#FFFFFF" weight="bold" />
+      </label>
+    </div>
+  );
 }

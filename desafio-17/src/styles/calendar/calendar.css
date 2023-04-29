@@ -39,10 +39,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.Calendar .days li:hover:not(.today, .selected) {
-  background-color: var(--hover);
-  transition: 0.3s ease-in-out;
-}
+
 
 .Calendar .days li.today {
   background-color: var(--primary);
@@ -78,5 +75,15 @@
 }
 
 .Calendar .days li.disabled {
+  cursor: default;
   opacity: 0.5;
+}
+
+.Calendar .days li:hover:not(.disabled) {
+  cursor: pointer;
+}
+
+.Calendar .days li:hover:not(.today, .selected) {
+  background-color: var(--hover);
+  transition: 0.3s ease-in-out;
 }

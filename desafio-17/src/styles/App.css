@@ -3,11 +3,25 @@
 @import './calendar/ToggleTheme.css';
 
 #App {
-  margin-top: 1.6rem;
+  margin-top: 2.2rem;
   padding: 3.2rem;
 
   box-shadow: 0rem 0.8rem 3.2rem rgba(0, 0, 0, 0.16);
   background-color: var(--card-bg);
   border-radius: 1.6rem;
+
+  transition: background-color 0.3s ease-in-out;
+  animation: fromLeft 0.5s ease-out forwards;
 }
 
+@keyframes fromLeft {
+  0% {
+    transform: translateX(-300%);
+    opacity: 0;
+  } 
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -11,6 +11,8 @@
   --text: #666666;
   --card-bg: #FFFFFF;
   --arrow: #666666;
+  --toggle-bg: #FFF9EA;
+  --toggle-border: #FFCA3A;
 }
 
 [data-theme="dark"] {
@@ -20,6 +22,8 @@
 	--heading: #ffffff;
   --card-bg: #121214;
 	--arrow: #d2d2d2;
+  --toggle-bg: #3C3C43;
+  --toggle-border: #FFFFFF;
 }
 
 * {
@@ -35,6 +39,9 @@ body {
   background-color: var(--background);
   display: grid;
   place-items: center;
+
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
 }
 
 button {
