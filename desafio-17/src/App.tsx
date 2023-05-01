@@ -23,7 +23,7 @@ function App() {
       <ToggleTheme isLightTheme={isLightTheme} setIsLightTheme={setIsLightTheme} />
       <div id="Calendar">
         <Navigation today={today} type={type} setToday={setToday} setType={setType} />
-        <Calendar today={today} type={type} date={date} setDate={setDate} setToday={setToday} setType={setType}/>
+        <Calendar today={today} type={type} setDate={setDate} setToday={setToday} setType={setType}/>
       </div>
       <h2 className="date">{date}</h2>
     </>
