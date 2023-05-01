@@ -27,6 +27,14 @@
   row-gap: 0.8rem;
 }
 
+.Calendar .months {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 4rem);
+  gap: 1.6rem;
+}
+
+.Calendar .months li, 
 .Calendar .days li {
   display: grid;
   place-items: center;
@@ -39,8 +47,12 @@
   transition: background-color 0.3s ease-in-out;
 }
 
+.Calendar .months li {
+  width: 8.2rem;
+  cursor: pointer;
+}
 
-
+.Calendar .months li.today,
 .Calendar .days li.today {
   background-color: var(--primary);
   color: var(--white);
@@ -48,6 +60,7 @@
   position: relative;
 }
 
+.Calendar .months li.today::after,
 .Calendar .days li.today::after {
   content: '';
   width: 0.4rem;
@@ -60,10 +73,15 @@
   border-radius: 50%;
 }
 
+.Calendar .months li.selected,
 .Calendar .days li.selected {
   background-color: var(--primary);
   border-radius: 0;
   color: var(--white);
+}
+
+.Calendar .months li.selected {
+  border-radius: 0.8rem;
 }
 
 .Calendar .days li.selected.first {
@@ -83,8 +101,10 @@
   cursor: pointer;
 }
 
+.Calendar .months li:hover:not(.today, .selected),
 .Calendar .days li:hover:not(.today, .selected) {
   background-color: var(--hover);
   color: var(--heading);
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }

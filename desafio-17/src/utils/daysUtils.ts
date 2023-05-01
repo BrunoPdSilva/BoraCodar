@@ -12,12 +12,10 @@ interface getClassProps {
   selectedDates: date[]
 }
 
-export function areDatesEqual(a: date, b: date) {
-  return a.isSame(b, "date") && a.isSame(b, "month") && a.isSame(b, "year");
-}
+export const areDatesEqual = (a: date, b: date) => a.isSame(b, "date") && a.isSame(b, "month") && a.isSame(b, "year");
 
-export function removeRepeatedDates(setSelectedDates: dispatch, selectedDates: date[], clickedDate: date) {
-  setSelectedDates(selectedDates.filter(date => !date.isSame(clickedDate)))
+export function removeRepeatedDates(setDates: dispatch, dates: date[], clickedDate: date) {
+  setDates(dates.filter(date => !date.isSame(clickedDate)))
 }
 
 export function getClassNames(props: getClassProps) {
@@ -25,11 +23,15 @@ export function getClassNames(props: getClassProps) {
 
   let classes = "";
 
-  if (today) { classes+= "today" }
-  if (!currentMonth) { classes += " disabled" }
-  if (isSelected) { classes+= " selected" }
-  if (selectedDates.length > 0 && date.isSame(selectedDates[0], 'day')) { classes += " first"; }
-  if (selectedDates.length > 0 && date.isSame(selectedDates[selectedDates.length - 1], 'day')) { classes += " last" }
+  if (today) classes += "today";
+
+  if (!currentMonth) classes += " disabled";
+
+  if (isSelected) classes += " selected";
+
+  if (selectedDates.length > 1 && date.isSame(selectedDates[0], 'day')) classes += " first"; 
+
+  if (selectedDates.length > 1 && date.isSame(selectedDates[selectedDates.length - 1], 'day')) classes += " last";
 
   return classes.trim();
 }

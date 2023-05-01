@@ -2,7 +2,7 @@
 @import './calendar/Calendar.css';
 @import './calendar/ToggleTheme.css';
 
-#App {
+#Calendar {
   margin-top: 2.2rem;
   padding: 3.2rem;
 
@@ -12,6 +12,13 @@
 
   transition: background-color 0.3s ease-in-out;
   animation: fromLeft 0.5s ease-out forwards;
+}
+
+h2.date {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  color: var(--heading);
+  text-align: center;
 }
 
 @keyframes fromLeft {
