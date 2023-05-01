@@ -85,5 +85,6 @@
 
 .Calendar .days li:hover:not(.today, .selected) {
   background-color: var(--hover);
+  color: var(--heading);
   transition: 0.3s ease-in-out;
 }

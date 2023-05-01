@@ -3,20 +3,13 @@ import dayjs from 'dayjs';
 
 interface Props {
   svg: JSX.Element;
-  today: dayjs.Dayjs;
   setToday: Dispatch<SetStateAction<dayjs.Dayjs>>;
-  action: string;
+  callback: () => dayjs.Dayjs;
 }
 
-export function NavButton({ svg, setToday, action, today }: Props) {
-  const subtractMonth = () => setToday(today.month(today.month() - 1));
-  const addMonth = () => setToday(today.month(today.month() + 1));
-
+export function NavButton({ svg, setToday, callback }: Props) {
   return (
-    <button
-      type="button"
-      onClick={action === 'minus' ? () => subtractMonth() : () => addMonth()}
-    >
+    <button type="button" onClick={() => setToday(callback())}>
       {svg}
     </button>
   );
