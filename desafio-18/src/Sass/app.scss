@@ -12,6 +12,8 @@ main {
     place-items: center;
     border-radius: 1.6rem;
     box-shadow: var(--secondary-shadow);
+
+    transition: transform 0.4s ease-out;   
   }
 
   .Card.Finn {
@@ -21,9 +23,23 @@ main {
   .Card.BB8 {
     background: url(../assets/BB8-overlay.png);
   }
-
+  
   .Card.Rey {
     background: url(../assets/rey-overlay.png);
+  }
+
+  .Card.Rey.active {
+    transform: translateX(-50%);
+    animation: opacity 0.4s ease-out forwards;
+  }
+
+  .Card.BB8.active {
+    transform: translateX(-50%);
+    animation: opacity 0.4s ease-out forwards;
+  }
+
+  .Card.Finn.active {
+    animation: finn 0.4s ease-out forwards;
   }
 
   .Card:not(.active) {
@@ -42,7 +58,6 @@ main {
     position: absolute;
     top: -12%;
     left: 50%;
-    transform: translateX(-50%);
     z-index: 9999;
     display: flex;
     flex-direction: column;
@@ -69,5 +84,23 @@ main {
       right: 0;
       bottom: 0;
     }
+  }
+}
+
+@keyframes finn {
+  from {
+    transform: translateX(-70%);
+    opacity: 0;
+  } to {
+    transform: translateX(-50%);
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  } to {
+    opacity: 1;
   }
 }
