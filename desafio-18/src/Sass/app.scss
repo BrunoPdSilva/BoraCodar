@@ -1,36 +1,73 @@
-section.Card {
-  width: 43.6rem;
-  height: 60.8rem;
-
-  padding: 4.8rem 0 0 4rem;
+main {
+  width: 91.6rem;
 
   display: flex;
-  flex-direction: column;
-  gap: 6rem;
-
-  border-radius: 2rem;
-  overflow: hidden;
+  justify-content: space-between;
 
   position: relative;
 
-  background: url(../assets/rey-overlay.svg);
-
-  .header {
-    width: 26.6rem;
-
-    display: grid;
-    gap: 1.6rem;
-  }
-
-  .details {
-    width: 19.8rem;
+  .Card {
+    width: 34.8rem;
+    height: 48.6rem;
 
     display: grid;
-    gap: 1.6rem;
+    place-items: center;
+
+    border-radius: 1.6rem;
+    box-shadow: var(--secondary-shadow);
+    overflow: hidden;
   }
 
-  .character {
+  .Card.Finn {
+    background: url(../assets/finn-overlay.png);
+  }
+
+  .Card.BB8 {
+    background: url(../assets/BB8-overlay.png);
+  }
+
+  .Card.Rey {
+    background: url(../assets/rey-overlay.png);
+  }
+
+  .Card-active {
+    width: 43.6rem;
+    height: 60.8rem;
+
+    padding: 4.8rem 0 0 4rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+
+    border-radius: 2rem;
+    overflow: hidden;
+
     position: absolute;
-    right: 0;
+    top: -12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background: url(../assets/overlay-active.png);
+    box-shadow: var(--main-shadow);
+
+    .header {
+      width: 26.6rem;
+
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .details {
+      width: 19.8rem;
+
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .character {
+      position: absolute;
+      right: 0;
+    }
   }
 }

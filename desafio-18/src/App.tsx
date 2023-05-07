@@ -9,8 +9,11 @@ export function App() {
 
   return (
     <main>
-
-      <section className="Card">
+      <section className="Card Finn">
+        <span>Finn</span>
+      </section>
+ 
+      <section className="Card-active">
         <div className="header">
           <h1>{rey.name}</h1>
           <h2>{rey.description}</h2>
@@ -25,8 +28,11 @@ export function App() {
         </ul>
 
         <img src={rey.image} alt="Rey Walker Star Wars" className="character" />
-      </section>
+      </section> 
 
+      <section className="Card BB8">
+        <span>BB8</span>
+      </section>
     </main>
   )
 }
