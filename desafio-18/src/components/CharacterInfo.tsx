@@ -17,7 +17,7 @@ export function CharacterInfo({ character }: ICharacter) {
         <ListItem title="Armas" subtitle={character.weapons} />
       </ul>
 
-      <img src={character.image} alt="Rey Walker Star Wars" />
+      <img className={character.name === "BB-8" ? "bb8" : ""} src={character.image} alt="Character Star Wars" />
     </>
   );
 }
