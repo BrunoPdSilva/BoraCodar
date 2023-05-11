@@ -1,0 +1,182 @@
+:root {
+  --primary: #372d3b;
+  --secondary: #864293;
+  --drag: #e5d8ea;
+  --white: #fbf8fc;
+
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.6rem;
+
+  background-color: #18181b;
+  display: grid;
+  place-items: center;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  color: var(--primary);
+}
+
+h3 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.9rem;
+  color: var(--primary);
+}
+
+span {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+  color: var(--white);
+}
+
+p {
+  margin-top: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: var(--primary);
+  text-align: center;
+}
+
+strong {
+  color: var(--secondary);
+}
+
+header {
+  display: grid;
+  gap: 0.4rem;
+}
+
+main {
+  width: 100%;
+  max-width: 79.5rem;
+  height: 68.9rem;
+
+  padding: 2.4rem 5.6rem 3.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9.9rem;
+
+  background-color: #fff;
+  border-radius: 4rem;
+}
+
+main .drag {
+  width: 16.8rem;
+  height: 1.6rem;
+
+  background-color: #e5d8ea;
+  border-radius: 999rem;
+  cursor: pointer;
+}
+
+main section {
+  width: 100%;
+  height: 17rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.driver {
+  position: relative;
+}
+
+.driver .star {
+  position: absolute;
+  left: 50%;
+  top: 11rem;
+  transform: translateX(-50%);
+  width: 10rem;
+  height: 3.2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  background-color: var(--primary);
+  border-radius: 1.6rem;
+  z-index: 999;
+}
+
+.driver .star img {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.driver img {
+  width: 13.7rem;
+  height: 13.7rem;
+
+  position: relative;
+  z-index: 500;
+}
+
+.driver::before {
+  content: '';
+  background-image: url(./assets/car.svg);
+  width: 28.6rem;
+  height: 11.2rem;
+  position: absolute;
+  top: 3rem;
+  left: 9.2rem;
+  z-index: 10;
+}
+
+section div:nth-child(2) {
+  display: grid;
+  gap: 1.2rem;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer input {
+  width: 100%;
+  height: 6.4rem;
+  border: 0;
+  padding-block: 1.8rem;
+  padding-left: 2.8rem;
+  background-color: #f5edf7;
+  border-radius: 2.4rem;
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 2.9rem;
+  color: #372D3B;
+  outline: none;
+}
+
+footer input::placeholder {
+  color: #372D3B;
+}
+
+footer div {
+  margin-left: 3.2rem;
+  width: 13.4rem;
+  display: flex;
+  gap: 4rem;
+}
