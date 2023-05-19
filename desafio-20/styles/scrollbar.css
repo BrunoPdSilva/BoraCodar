@@ -1,0 +1,13 @@
+/* Estilos para Webkit (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px; /* Largura da scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #131314; /* Cor do track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff; /* Cor da scrollbar */
+  border-radius: 6px; /* Raio dos cantos da scrollbar */
+}

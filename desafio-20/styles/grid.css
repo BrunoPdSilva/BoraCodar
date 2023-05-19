@@ -1,0 +1,42 @@
+.grid {
+  max-width: 80rem;
+  height: 60rem;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.gallery-l {
+  grid-template-areas:
+    'a b'
+    'a c';
+}
+
+.gallery-r {
+  grid-template-areas:
+    'a c'
+    'b c';
+}
+
+.gallery-l div:nth-child(1) {
+  grid-area: a;
+}
+
+.gallery-l div:nth-child(2) {
+  grid-area: b;
+}
+
+.gallery-l div:nth-child(3) {
+  grid-area: c;
+}
+
+.gallery-r div:nth-child(1) {
+  grid-area: a;
+}
+
+.gallery-r div:nth-child(2) {
+  grid-area: b;
+}
+
+.gallery-r div:nth-child(3) {
+  grid-area: c;
+}
