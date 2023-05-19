@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimezeLegibility;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --picture-gradient: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  --image-overlay: rgba(94, 94, 94, 0.2);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Hepta Slab', serif;
+
+  min-height: 100vh;
+  padding: 14rem 13.4rem 0 11.1rem;
+
+  background: url(./assets/noise-bg.png) var(--image-overlay);
+  background-color: #121214;
+
+  display: grid;
+  grid-template-columns: 38.5rem 1fr;
+  column-gap: 1rem;
+}
+
+h1 {
+  max-width: 38.5rem;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 6rem;
+  color: #ffffff;
+}
+
+img[alt='Arrow Icon'] {
+  margin-top: 3.2rem;
+}
+
+section {
+  display: grid;
+  column-gap: 3.2rem;
+}
+
+.grid {
+  max-width: 80rem;
+  height: 60rem;
+  display: grid;
+  gap: 3.2rem;
+}
+
+.gallery-l {
+  grid-template-areas:
+    'a b'
+    'a c';
+}
+
+.gallery-l div:nth-child(1) {
+  grid-area: a;
+  height: 100%;
+}
+
+.gallery-l div:nth-child(2) {
+  grid-area: b;
+}
+
+.gallery-l div:nth-child(3) {
+  grid-area: c;
+}
+
+img:not([alt='Arrow Icon']) {
+  width: 100%;
+  height: 100%;
+
+  transition: 800ms ease-in-out;
+}
+
+.grid div {
+  max-width: 38.4rem;
+  overflow: hidden;
+
+  position: relative;
+}
+
+.grid div:hover {
+  outline: 0.4rem solid #fff;
+}
+
+.grid div:hover img {
+  transform: scale(2.1354);
+  transition: 800ms ease-in-out;
+}
