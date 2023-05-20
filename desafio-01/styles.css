@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimezeLegibility;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg: #0f0d13;
+  --player: #2a2141;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+
+  height: 100vh;
+
+  background-color: var(--bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  line-height: 100%;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #e1e1e6;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #a5a2af;
+}
+
+span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 160%;
+  color: #c4c4cc;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+main {
+  max-width: 65.6rem;
+  max-height: 50rem;
+
+  display: grid;
+  grid-template-areas:
+    'a b'
+    'a c';
+  gap: 3.2rem;
+}
+
+section {
+  max-width: 35.8rem;
+  padding: 2.8rem;
+  display: grid;
+  gap: 2.8rem;
+  background-color: var(--player);
+  border-radius: 1rem;
+}
+
+section .music {
+  display: flex;
+  gap: 3rem;
+}
+
+section .music img {
+  width: 8.4rem;
+  height: 8.4rem;
+  border-radius: 0.6rem;
+}
+
+section:nth-child(1) .music {
+  flex-direction: column;
+}
+
+section:nth-child(1) .music img {
+  width: 100%;
+  height: 18.9rem;
+}
+
+section .music div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section:nth-child(1) {
+  grid-area: a;
+  padding: 3.8rem;
+}
+
+section:nth-child(2) {
+  grid-area: b;
+}
+
+section:nth-child(3) {
+  grid-area: c;
+}
+
+.buttons-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress {
+  width: 100%;
+  height: 0.6rem;
+  overflow: hidden;
+
+  position: relative;
+
+  background-color: #5e586f;
+  border-radius: 1rem;
+
+  margin-bottom: 1rem;
+}
+
+.progress::after {
+  content: '';
+  height: 0.6rem;
+  width: var(--w);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: #c1c0c4;
+  border-radius: 1rem;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+}
