@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimezeLegibility;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --main-bg: #130f1e;
+
+  --primary: #8257e5;
+  --default: #3c3748;
+  --primary-hover: #9674e5;
+  --default-hover: #6a617f;
+}
+
+body {
+  font-size: 1.6rem;
+
+  height: 100vh;
+  background-color: var(--main-bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: default;
+  cursor: url(./assets/default.svg), auto;
+}
+
+h2 {
+  font-family: 'Inter';
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 100%;
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-family: 'Roboto';
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.3rem;
+  color: #ffffff67;
+
+  margin-bottom: 6.8rem;
+}
+
+button {
+  font-family: 'Inter';
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  padding: 1.2rem 2.4rem;
+  background: var(--default);
+  border-radius: 2.4rem;
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  cursor: default;
+  cursor: url(./assets/default.svg), auto;
+
+  position: relative;
+}
+
+/* $ Buttons states */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+button.primary {
+  background-color: var(--primary);
+  transition: background 600ms ease-in-out;
+}
+
+button.terciary {
+  background: 0;
+  border: 0;
+}
+
+button.primary:hover {
+  background: var(--primary-hover);
+}
+
+button:hover {
+  background: var(--default-hover);
+}
+
+button:focus-visible {
+  outline: 0.2rem solid #fff;
+}
+
+button:disabled {
+  background-color: var(--default);
+  opacity: 0.56;
+  cursor: default;
+  cursor: url(./assets/disabled.svg), auto;
+}
+
+.loading {
+  position: absolute;
+  left: 7rem;
+
+  height: 1.6rem;
+  width: 1.6rem;
+
+  border: 0.2rem solid #ffffff;
+  border-top: 2px solid transparent;
+
+  border-radius: 50%;
+
+  animation: spin 1.3s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
