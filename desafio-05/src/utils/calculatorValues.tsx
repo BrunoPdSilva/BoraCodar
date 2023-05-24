@@ -1,6 +1,6 @@
 import { Equals, Percent, Divide, X, Minus, Plus, PlusMinus } from 'phosphor-react';
 
-export const calcValues = [
+export const calculatorValues = [
   { value: 'CE' },
   { value: 'C' },
   { value: '%', icon: <Percent /> },

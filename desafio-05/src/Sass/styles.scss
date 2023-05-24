@@ -119,6 +119,17 @@ main {
   header {
     height: 8.6rem;
 
+    p {
+      height: 2.8rem;
+
+      width: 100%;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
     div {
       height: 5rem;
 
@@ -126,6 +137,15 @@ main {
       justify-content: space-between;
       align-items: center;
       gap: 0.8rem;
+
+      h1 {
+        width: 100%;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
     }
   }
 

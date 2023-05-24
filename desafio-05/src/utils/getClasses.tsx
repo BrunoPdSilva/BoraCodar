@@ -1,9 +1,9 @@
-interface Icalc {
+interface Props {
   value: string;
   icon?: JSX.Element;
 }
 
-export function getClasses(item: Icalc) {
+export function getClasses(item: Props) {
   let classes = '';
 
   const isNotPurple =
