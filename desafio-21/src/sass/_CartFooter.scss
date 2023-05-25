@@ -18,14 +18,12 @@ footer {
       gap: 0.8rem;
     }
 
-    button {
-      width: fit-content;
-      margin-left: auto;
-      background: none;
-      border: 0;
+    label {
+      position: relative;
 
-      font-size: 1.6rem;
-      line-height: 2.4rem;
+      width: fit-content;
+      height: 2.4rem;
+      margin-left: auto;
       color: var(--brand-color-light);
 
       display: flex;
@@ -34,9 +32,47 @@ footer {
 
       transition: color 300ms ease-out;
 
+      .clearInput {
+        position: absolute;
+        right: 0;
+
+        cursor: pointer;
+      }
+
+      input {
+        width: 13.2rem;
+
+        background: none;
+        border: 0;
+        outline: 0;
+
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        color: var(--text-color-secondary);
+
+        &::placeholder {
+          color: var(--brand-color-light);
+          transition: color 300ms ease-out;
+        }
+
+        &:focus {
+          box-shadow: 0px 2px 0px 0px var(--brand-color-light);
+        }
+
+        &:focus::placeholder {
+          display: none;
+        }
+
+      }
+
       &:hover {
         color: var(--brand-color-lighter);
         transition: color 300ms ease-out;
+
+        input::placeholder {
+          color: var(--brand-color-lighter);
+          transition: color 300ms ease-out;
+        }
       }
     }
   }
