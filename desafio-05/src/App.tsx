@@ -3,35 +3,61 @@ import { Buttons } from './components/Buttons';
 import { useState } from 'react';
 
 function App() {
-  const [values, setValues] = useState<string[]>([]);
-  const [result, setResult] = useState(0);
-
-  console.log(`Operation: ${values} = ${result}`);
+  const [values, setValues] = useState<(string | string[])[]>([[]]);
+  const [result, setResult] = useState<number>(0);
 
   function addValue(value: string) {
-    setValues(prevValues => {
-      const lastValue = prevValues[prevValues.length - 1];
-      if (lastValue && isOperator(lastValue) && isOperator(value)) {
-        return [...prevValues.slice(0, -1), value];
-      } else if (lastValue === '.' && value === ".") {
-        return [...prevValues.slice(0, -1), value];
-      } else {
-        return [...prevValues, value];
-      }
-    });
+    const lastValue = values[values.length - 1];
+
+    if (values.length === 0 || (isOperator(lastValue) && isOperator(value))) {
+      return;
+    }
+
+    if (values.length === 0) {
+      setValues([[value]]);
+      return;
+    }
+
+    if (isOperator(lastValue)) {
+      setValues(prev => [...prev, [value]]);
+      return;
+    }
+
+    if (isOperator(value)) {
+      setValues(prev => [...prev, value]);
+      return;
+    }
+
+    if (value === '.' && Array.isArray(lastValue) && lastValue.includes('.')) {
+      return;
+    }
+
+    const initialA = values.slice(0, values.length - 1);
+    const lastA = values.slice(values.length - 1);
+    lastA[0] = [...lastA[0], value];
+
+    setValues([...initialA, ...lastA]);
   }
-  
-  function isOperator(value: string) {
+
+  function getEvalStr(array: (string | string[])[]) {
+    return array.flat().join('');
+  }
+
+  function isOperator(value: string | string[]) {
+    if (Array.isArray(value)) {
+      return value.every(item => ['+', '-', '*', '/'].includes(item));
+    }
+
     return ['+', '-', '*', '/'].includes(value);
   }
 
   function clearValues() {
-    setValues([]);
+    setValues([[]]);
     setResult(0);
   }
 
   function calculateResult() {
-    const expression = values.join('');
+    const expression = getEvalStr(values);
     const calculatedResult = eval(expression);
     setResult(calculatedResult);
   }
@@ -41,17 +67,18 @@ function App() {
     setResult(result / 100);
   }
 
-  function negate() { 
-    setValues([String(-result)])
+  function negate() {
+    setValues([String(-result)]);
     setResult(-result);
   }
 
   return (
     <main id="calculator">
       <header>
-        <p>{values.join('')}</p>
+        <p>{getEvalStr(values)}</p>
         <div>
           <Equals size={20} color="#6B6B6B" />
+
           <h1>{result}</h1>
         </div>
       </header>
