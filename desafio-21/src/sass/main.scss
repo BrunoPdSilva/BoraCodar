@@ -1,0 +1,84 @@
+@use '_CartFooter';
+@use '_CartHeader';
+
+:root {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --brand-color: #9333ea;
+  --brand-color-light: #a855f7;
+  --brand-color-lighter: #c084fc;
+  --text-color-primary: #f9fafb;
+  --text-color-secondary: #e4e4e7;
+  --close-button-color: #a1a1aa;
+  --stroke-color: #3f3f46;
+  --surface-color: #18181b;
+  --background-color: #09090b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Inter', sans-serif;
+
+  height: 100vh;
+  background: var(--background-color);
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 42.8rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: var(--text-color-primary);
+}
+
+b {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--text-color-secondary);
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  color: var(--text-color-secondary);
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  color: var(--text-color-secondary);
+}
+
+span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  color: var(--text-color-secondary);
+}
+
+aside {
+  height: 100vh;
+  background: var(--surface-color);
+
+  display: grid;
+  grid-template-rows: 7.2rem 1fr 22.4rem;
+}
