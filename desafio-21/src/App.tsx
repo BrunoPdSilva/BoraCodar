@@ -1,5 +1,5 @@
-import {  } from 'phosphor-react';
 import { CartHeader } from './components/CartHeader';
+import { CartProducts } from './components/CartProducts';
 import { CartFooter } from './components/CartFooter';
 
 function App() {
@@ -8,9 +8,7 @@ function App() {
       <main></main>
       <aside>
         <CartHeader />
-
-        <div className="products"></div>
-
+        <CartProducts />
         <CartFooter />
       </aside>
     </>
