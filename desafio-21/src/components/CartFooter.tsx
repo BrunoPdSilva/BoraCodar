@@ -2,8 +2,9 @@ import { Tag, X } from 'phosphor-react';
 import { useState } from 'react';
 
 export function CartFooter() {
-  const [cupom, setCupom] = useState('');
   const [showPlaceholder, setShowPlaceholder] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [cupom, setCupom] = useState('');
 
   const handleFocus = () => {
     setShowPlaceholder(false);
@@ -11,6 +12,11 @@ export function CartFooter() {
 
   const handleBlur = () => {
     setShowPlaceholder(true);
+  };
+
+  const handleLoading = () => {
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 2000);
   };
 
   return (
@@ -40,7 +46,9 @@ export function CartFooter() {
           />
         </label>
       </div>
-      <button className="cta">Finalizar compra</button>
+      <button className="cta" onClick={handleLoading}>
+        {!isLoading ? 'Finalizar compra' : <div className="loading"></div>}
+      </button>
     </footer>
   );
 }

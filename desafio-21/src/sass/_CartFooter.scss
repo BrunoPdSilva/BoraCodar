@@ -1,8 +1,6 @@
 footer {
   border-top: 1px solid var(--stroke-color);
-
   padding: 3.2rem;
-
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
@@ -20,32 +18,26 @@ footer {
 
     label {
       position: relative;
-
       width: fit-content;
       height: 2.4rem;
       margin-left: auto;
       color: var(--brand-color-light);
-
       display: flex;
       align-items: center;
       gap: 0.8rem;
-
       transition: color 300ms ease-out;
 
       .clearInput {
         position: absolute;
         right: 0;
-
         cursor: pointer;
       }
 
       input {
-        width: 13.2rem;
-
+        width: 12rem;
         background: none;
         border: 0;
         outline: 0;
-
         font-size: 1.6rem;
         line-height: 2.4rem;
         color: var(--text-color-secondary);
@@ -62,13 +54,11 @@ footer {
         &:focus::placeholder {
           display: none;
         }
-
       }
 
       &:hover {
         color: var(--brand-color-lighter);
         transition: color 300ms ease-out;
-
         input::placeholder {
           color: var(--brand-color-lighter);
           transition: color 300ms ease-out;
@@ -80,28 +70,49 @@ footer {
   .cta {
     width: 100%;
     height: 6.4rem;
-
     padding: 2rem 4.8rem;
-
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 2.4rem;
     color: var(--text-color-primary);
-
+    display: flex;
+    justify-content: center;
     background-color: var(--brand-color);
     border-radius: 0.8rem;
     border: 0;
-
     transition: background 300ms ease-out;
+
+    .loading {
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 0.2rem solid var(--text-color-primary);
+      border-top: 0.2rem solid var(--brand-color);
+      border-radius: 50%;
+      transition: 300ms ease-out;
+      animation: spin 1.3s infinite linear;
+    }
 
     &:hover {
       background: var(--brand-color-light);
       transition: 300ms ease-out;
+
+      .loading {
+        border-top: 0.2rem solid var(--brand-color-light);
+      }
     }
 
     &:focus-visible {
       outline: 0.2rem solid var(--text-color-primary);
       outline-offset: 0.2rem;
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
   }
 }
