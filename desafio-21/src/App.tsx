@@ -1,5 +1,6 @@
-import { CartHeader } from './components/CartHeader';
+import { CartContextP } from './context/CartContextP';
 import { CartProducts } from './components/CartProducts';
+import { CartHeader } from './components/CartHeader';
 import { CartFooter } from './components/CartFooter';
 
 function App() {
@@ -8,8 +9,10 @@ function App() {
       <main></main>
       <aside>
         <CartHeader />
-        <CartProducts />
-        <CartFooter />
+        <CartContextP>
+          <CartProducts />
+          <CartFooter />
+        </CartContextP>
       </aside>
     </>
   );

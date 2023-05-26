@@ -1,30 +1,33 @@
-import { Tag, X } from 'phosphor-react';
 import { useState } from 'react';
+import { NumericFormat } from 'react-number-format';
+import { useCartContext } from '../hooks/useCartContext';
+import { handleFocus, handleLoading } from '../utils/footerUtils';
+import { Tag, X } from 'phosphor-react';
 
 export function CartFooter() {
   const [showPlaceholder, setShowPlaceholder] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [cupom, setCupom] = useState('');
-
-  const handleFocus = () => {
-    setShowPlaceholder(false);
-  };
-
-  const handleBlur = () => {
-    setShowPlaceholder(true);
-  };
-
-  const handleLoading = () => {
-    setIsLoading(true);
-    setTimeout(() => setIsLoading(false), 2000);
-  };
+  
+  const { total } = useCartContext();
 
   return (
     <footer>
       <div className="price">
         <div>
           <h3>Total: </h3>
-          <h2>R$ 10.681,60</h2>
+          <h2>
+            <NumericFormat
+              value={total}
+              displayType="text"
+              prefix="R$ "
+              thousandSeparator="."
+              decimalSeparator=","
+              decimalScale={2}
+              fixedDecimalScale={true}
+              className="priceValue"
+            />
+          </h2>
         </div>
         <label>
           <Tag size={24} />
@@ -32,8 +35,8 @@ export function CartFooter() {
             type="text"
             placeholder={showPlaceholder ? 'Adicionar cupom' : ''}
             onChange={e => setCupom(e.target.value)}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
+            onFocus={() => handleFocus(setShowPlaceholder, false)}
+            onBlur={() => handleFocus(setShowPlaceholder, true)}
             value={cupom}
           />
 
@@ -46,7 +49,7 @@ export function CartFooter() {
           />
         </label>
       </div>
-      <button className="cta" onClick={handleLoading}>
+      <button className="cta" onClick={() => handleLoading(setIsLoading)}>
         {!isLoading ? 'Finalizar compra' : <div className="loading"></div>}
       </button>
     </footer>

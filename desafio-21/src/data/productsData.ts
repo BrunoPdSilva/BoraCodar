@@ -4,7 +4,13 @@ import Teclado from '../assets/product-image-teclado.jpg';
 import Headset from '../assets/product-image-headset.jpg';
 import Patinho from '../assets/product-image-patinho.jpg';
 
-export const products = [
+export interface IProducts {
+  image: string;
+  description: string;
+  price: number;
+}
+
+export const productsData = [
   {
     image: Monitor,
     description:
@@ -21,7 +27,11 @@ export const products = [
     description: 'Teclado Gamer Mecânico Low Profile RGB AW510K 580',
     price: 1002.0,
   },
-  { image: Headset, description: 'Headset Gamer RGB Preto', price: 99.9 },
+  {
+    image: Headset,
+    description: 'Headset Gamer RGB Preto',
+    price: 99.9,
+  },
   {
     image: Patinho,
     description: 'Patinho de Borracha Para Banho',

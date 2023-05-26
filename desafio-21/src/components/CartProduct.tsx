@@ -1,37 +1,16 @@
-import { Minus, Plus } from 'phosphor-react';
 import { useState } from 'react';
+import { IProducts } from '../data/productsData';
 import { NumericFormat } from 'react-number-format';
+import { useCartContext } from '../hooks/useCartContext';
+import { addOne, getDescription, subtractOne } from '../utils/ProductUtils';
+import { Minus, Plus } from 'phosphor-react';
 
-interface Props {
-  image: string;
-  description: string;
-  price: number;
-}
-
-export function CartProduct({ image, description, price }: Props) {
+export function CartProduct({ image, description, price }: IProducts) {
   const [productPrice, setProductPrice] = useState(price);
   const [quantity, setQuantity] = useState(1);
+  const { setTotal } = useCartContext();
 
-  function addOne() {
-    setProductPrice(prevPrice => prevPrice + price);
-    setQuantity(prev => prev + 1);
-  }
-
-  function subtractOne() {
-    if (quantity > 1) {
-      setQuantity(prev => prev - 1);
-      setProductPrice(prevPrice => prevPrice - price);
-    } else {
-      setProductPrice(price);
-    }
-  }
-
-  function getDescription(description: string) {
-    if (description.length > 47) {
-      return description.substring(0, 48) + '...';
-    }
-    return description;
-  }
+  const params = { setProductPrice, setTotal, setQuantity, price };
 
   return (
     <li className="product">
@@ -53,11 +32,14 @@ export function CartProduct({ image, description, price }: Props) {
           />
 
           <div className="quantity">
-            <button className="minus" onClick={subtractOne}>
+            <button
+              className="minus"
+              onClick={() => subtractOne({ ...params, quantity })}
+            >
               <Minus size={16} weight="bold" />
             </button>
             <span>{quantity}</span>
-            <button className="plus" onClick={addOne}>
+            <button className="plus" onClick={() => addOne(params)}>
               <Plus size={16} weight="bold" />
             </button>
           </div>
