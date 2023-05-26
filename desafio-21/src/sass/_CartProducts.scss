@@ -39,6 +39,11 @@
         justify-content: space-between;
         gap: 0.8rem;
 
+        .priceValue {
+          width: 11.6rem;
+          white-space: nowrap;
+        }
+
         .quantity {
           display: flex;
           align-items: center;
