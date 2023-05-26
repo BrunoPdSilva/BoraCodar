@@ -1,10 +1,11 @@
-import { ShoppingCart } from 'phosphor-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { CartContextP } from './context/CartContextP';
 import { CartProducts } from './components/CartProducts';
 import { CartHeader } from './components/CartHeader';
 import { CartFooter } from './components/CartFooter';
+import { productsData } from './data/productsData';
+import { ShoppingCart } from 'phosphor-react';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
   const [showCart, setShowCart] = useState(true);
@@ -46,6 +47,7 @@ function App() {
       {!showCart && (
         <button className="cart-icon" onClick={() => setShowCart(true)}>
           <ShoppingCart size={32} />
+          <div>{productsData.length}</div>
         </button>
       )}
     </>
