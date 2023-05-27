@@ -1,0 +1,150 @@
+$black: #000000;
+$white: #ffffff;
+$dashed: .1rem dashed rgba(0, 0, 0, 0.32);
+
+:root {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  height: 100svh;
+
+  background: linear-gradient(167.96deg, #8257e5 0%, #271a45 100%);
+
+  display: grid;
+  place-items: center;
+}
+
+// $ FONT-STYLES
+h1 {
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 4.7rem;
+  letter-spacing: -0.02em;
+  color: $black;
+  opacity: 0.88;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: -0.02em;
+  color: $white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.9rem;
+  opacity: 0.88;
+  color: $black;
+
+  &.o-80 {
+    font-weight: 400;
+    opacity: 0.8;
+  }
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7rem;
+  letter-spacing: -0.02em;
+  color: $black;
+  opacity: 0.64;
+}
+
+span {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2rem;
+  letter-spacing: -0.02em;
+  color: $black;
+  opacity: 0.8;
+
+  transform: translateY(-0.5rem);
+}
+
+.c-white {
+  color: $white;
+}
+
+// $ MAIN Styles
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.boarding-pass {
+  width: 32.7rem;
+
+  section {
+    padding: 2.4rem 3.2rem;
+    background: $white;
+    border-radius: 2.4rem;
+
+    &.flight-info {
+      display: grid;
+      gap: 2.4rem;
+
+      .container:nth-child(2) {
+        position: relative;
+
+        img[alt='Plane'] {
+          position: absolute;
+          top: 40%;
+          left: 50%;
+          transform: translate(-50%);
+        }
+      }
+    }
+
+    &.passenger-info {
+      position: relative;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        top: -0.08rem;
+        left: 2.4rem;
+        width: 27.9rem;
+
+        border-top: $dashed;
+        border-width: .2rem;
+      }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        bottom: -0.08rem;
+        left: 2.4rem;
+        width: 27.9rem;
+
+        border-top: $dashed;
+        border-width: .2rem;
+      }
+    }
+
+  }
+}
