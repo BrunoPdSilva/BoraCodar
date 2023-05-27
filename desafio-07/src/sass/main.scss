@@ -1,3 +1,6 @@
+@use '_header';
+@import '_variables';
+
 :root {
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased;
@@ -11,5 +14,48 @@
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
+
+  background-color: $bg;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 125%;
+  color: $heading;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 140%;
+  color: $heading;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 140%;
+  color: $heading;
+}
+
+p {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 160%;
+  color: $text;
+}
+
+button {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+
+  cursor: pointer;
 }
