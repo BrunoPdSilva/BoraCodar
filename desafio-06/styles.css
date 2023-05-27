@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 1.6rem;
   height: 100vh;
   height: 100svh;
@@ -99,7 +99,7 @@ span {
 .boarding-pass section.flight-info .container:nth-child(2) {
   position: relative;
 }
-.boarding-pass section.flight-info .container:nth-child(2) img[alt=Plane] {
+.boarding-pass section.flight-info .container:nth-child(2) img[alt='Plane'] {
   position: absolute;
   top: 40%;
   left: 50%;
@@ -109,7 +109,7 @@ span {
   position: relative;
 }
 .boarding-pass section.passenger-info::before {
-  content: "";
+  content: '';
   position: absolute;
   top: -0.08rem;
   left: 2.4rem;
@@ -118,13 +118,54 @@ span {
   border-width: 0.2rem;
 }
 .boarding-pass section.passenger-info::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -0.08rem;
   left: 2.4rem;
   width: 27.9rem;
   border-top: 0.1rem dashed rgba(0, 0, 0, 0.32);
   border-width: 0.2rem;
+}
+.boarding-pass section.boarding-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+.boarding-pass section.boarding-info .boarding-local {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.boarding-pass section.boarding-info .boarding-local div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.boarding-pass section.boarding-info .boarding-local div:nth-child(1) h3 {
+  width: fit-content;
+  padding: 0.4rem 0.8rem;
+  background: #633bbc;
+  border-radius: 0.8rem;
+  line-height: normal;
+  opacity: unset;
+}
+.boarding-pass section.boarding-info .QRCode {
+  text-align: center;
+}
+.boarding-pass section.boarding-info .QRCode img[alt='QRCode'] {
+  width: 16rem;
+  height: 16rem;
+  object-fit: cover;
+}
+.boarding-pass section.boarding-info h3.o-80 {
+  text-align: center;
+}
+.boarding-pass section.boarding-info h3.o-80 strong {
+  font-weight: 500;
+}
+.boarding-pass footer {
+  text-align: center;
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,6 @@
 $black: #000000;
 $white: #ffffff;
-$dashed: .1rem dashed rgba(0, 0, 0, 0.32);
+$dashed: 0.1rem dashed rgba(0, 0, 0, 0.32);
 
 :root {
   font-size: 62.5%;
@@ -122,7 +122,7 @@ span {
       position: relative;
 
       &::before {
-        content: "";
+        content: '';
 
         position: absolute;
         top: -0.08rem;
@@ -130,11 +130,11 @@ span {
         width: 27.9rem;
 
         border-top: $dashed;
-        border-width: .2rem;
+        border-width: 0.2rem;
       }
 
       &::after {
-        content: "";
+        content: '';
 
         position: absolute;
         bottom: -0.08rem;
@@ -142,9 +142,57 @@ span {
         width: 27.9rem;
 
         border-top: $dashed;
-        border-width: .2rem;
+        border-width: 0.2rem;
       }
     }
 
+    &.boarding-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.4rem;
+
+      .boarding-local {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+
+        div:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          gap: 0.2rem;
+
+          h3 {
+            width: fit-content;
+            padding: 0.4rem 0.8rem;
+            background: #633bbc;
+            border-radius: 0.8rem;
+            line-height: normal;
+            opacity: unset;
+          }
+        }
+      }
+
+      .QRCode {
+        text-align: center;
+
+        img[alt='QRCode'] {
+          width: 16rem;
+          height: 16rem;
+          object-fit: cover;
+        }
+      }
+
+      h3.o-80 {
+        text-align: center;
+        strong {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 2rem;
   }
 }
