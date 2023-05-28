@@ -8,7 +8,14 @@ import img07 from '../assets/img-07.png';
 import img08 from '../assets/img-08.png';
 import img09 from '../assets/img-09.png';
 
-export const blocks = [
+export interface IBlocks {
+  img: string;
+  title: string;
+  description: string;
+  local: string;
+}
+
+export const blocksData = [
   {
     img: img01,
     title: 'O Python do vovô não sobe mais',
@@ -68,8 +75,7 @@ export const blocks = [
   {
     img: img09,
     title: 'Não valho nada mas JAVA li',
-    description:
-      'Uma celebração épica com muita animação e descontração!',
+    description: 'Uma celebração épica com muita animação e descontração!',
     local: 'São Paulo - SP',
   },
 ];

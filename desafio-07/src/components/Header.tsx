@@ -1,13 +1,19 @@
 import { CaretDown, MagnifyingGlass, MapPin } from 'phosphor-react';
-import { useEffect, useRef, useState } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from 'react';
 import { Dropdown } from './Dropdown';
+import { Filter } from '../App';
 
 import topIllustration from '../assets/ilustra-01.svg';
 import bottomIllustration from '../assets/ilustra-02.svg';
 
-export function Header() {
+interface Props {
+  setFilter: Dispatch<SetStateAction<Filter | null>>;
+}
+
+export function Header({ setFilter }: Props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [dropdownValue, setDropdownValue] = useState('');
+  const [searchValue, setSearchValue] = useState('');
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +36,17 @@ export function Header() {
     setShowDropdown(false);
   }
 
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    const filter = {
+      title: searchValue.toLowerCase().trim(),
+      local: dropdownValue.toLowerCase().trim()
+    }
+
+    setFilter(filter);
+  }
+
   return (
     <>
       <header>
@@ -38,19 +55,30 @@ export function Header() {
         <section>
           <div className="heading">
             <p>Find your block</p>
-            <h1>Encontre os <span>melhores blocos</span> de carnaval de 2023</h1>
+            <h1>
+              Encontre os <span>melhores blocos</span> de carnaval de 2023
+            </h1>
           </div>
 
-          <form name="search">
+          <form name="search" onSubmit={e => handleSubmit(e)}>
             <div className="input-group">
               <MagnifyingGlass size={24} color="#E45858" />
-              <input type="text" placeholder="Pesquise por nome" />
+              <input
+                type="text"
+                placeholder="Pesquise por nome"
+                onChange={e => setSearchValue(e.target.value)}
+                value={searchValue}
+              />
             </div>
 
-            <div className="input-group" ref={dropdownRef} onClick={() => setShowDropdown(!showDropdown)}>
+            <div
+              className="input-group"
+              ref={dropdownRef}
+              onClick={() => setShowDropdown(!showDropdown)}
+            >
               <MapPin size={24} color="#E45858" />
               <p>{dropdownValue || 'Selecione uma cidade'}</p>
-              <button type="button"              >
+              <button type="button">
                 <CaretDown size={24} color="#858793" />
               </button>
 

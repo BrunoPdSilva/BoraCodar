@@ -24,6 +24,7 @@ header {
   }
 
   section {
+    width: 100%;
     max-width: 99.3rem;
     display: flex;
     flex-direction: column;
@@ -31,6 +32,8 @@ header {
     gap: 4rem;
     position: relative;
     z-index: 200;
+
+    margin: 2rem;
 
     .heading {
       max-width: 64.7rem;

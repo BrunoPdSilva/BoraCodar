@@ -1,11 +1,23 @@
+import { useEffect, useState } from 'react';
 import { Header } from './components/Header';
-import { blocks } from './data/blocksData';
+import { blocksData } from './data/blocksData';
 import { Card } from './components/Card';
+import { filterBlocks } from './utils/filter';
+
+export interface Filter {
+  title?: string;
+  local?: string;
+}
 
 function App() {
+  const [filter, setFilter] = useState<Filter | null>(null);
+  const [blocks, setBlocks] = useState(blocksData);
+
+  useEffect(() => filterBlocks({ filter, setBlocks }), [filter]);
+
   return (
     <>
-      <Header />
+      <Header setFilter={setFilter} />
       <main className="blocos">
         <div className="section-header">
           <h2>Blocos recomendados</h2>
