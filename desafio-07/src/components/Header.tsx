@@ -1,5 +1,12 @@
 import { CaretDown, MagnifyingGlass, MapPin } from 'phosphor-react';
-import { Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from 'react';
+import {
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Dropdown } from './Dropdown';
 import { Filter } from '../App';
 
@@ -41,8 +48,8 @@ export function Header({ setFilter }: Props) {
 
     const filter = {
       title: searchValue.toLowerCase().trim(),
-      local: dropdownValue.toLowerCase().trim()
-    }
+      local: dropdownValue.toLowerCase().trim(),
+    };
 
     setFilter(filter);
   }
