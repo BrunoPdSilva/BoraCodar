@@ -3,13 +3,16 @@
 .blocos {
   max-width: 121.6rem;
   width: 100%;
-  padding-block: 10rem;
+  padding: 10rem 2rem;
+  
 
   margin-inline: auto;
 
   .section-header {
     display: flex;
     justify-content: space-between;
+    gap: .8rem;
+    flex-wrap: wrap;
     align-items: center;
 
     margin-bottom: 4rem;
@@ -56,17 +59,19 @@
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 32.3rem);
     gap: 3.2rem;
 
     .card {
+      
       width: 100%;
-      height: 100%;
 
       background: $white;
       border-radius: 1rem;
       border: .1rem solid $stroke;
       overflow: hidden;
+
+      display: grid;
+      grid-template-rows: 15.3rem 1fr;
 
       img {
         width: 100%;
@@ -79,7 +84,14 @@
 
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 1.6rem;
+
+        div:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          gap: 1.6rem;
+        }
       }
 
       .local {
@@ -88,5 +100,17 @@
         gap: .8rem;
       }
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .cards {
+    grid-template-columns: 1fr !important;
   }
 }

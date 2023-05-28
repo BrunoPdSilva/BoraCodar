@@ -10,8 +10,10 @@ export function Card({ block }: Props) {
       <img src={block.img} alt="Imagem do bloco" />
 
       <div className="details">
-        <h3>{block.title}</h3>
-        <p>{block.description}</p>
+        <div>
+          <h3>{block.title}</h3>
+          <p>{block.description}</p>
+        </div>
 
         <div className="local">
           <MapPin size={24} color="#e45858" />

@@ -1,7 +1,7 @@
 @import '_variables';
 
 header {
-  height: 53.2rem;
+  min-height: 53.2rem;
 
   display: flex;
   justify-content: center;
@@ -58,6 +58,7 @@ header {
       padding: 4rem;
 
       display: flex;
+      justify-content: center;
       gap: 2.4rem;
 
       background: $white;
@@ -146,6 +147,16 @@ header {
           background: #583fd3;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  form {
+    flex-direction: column;
+
+    .input-group {
+      max-width: none !important;
     }
   }
 }

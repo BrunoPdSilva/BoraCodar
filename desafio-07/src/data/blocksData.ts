@@ -62,7 +62,7 @@ export const blocksData = [
     img: img07,
     title: 'Pimenta no C# dos outros é refresco',
     description:
-      'Prepare-se para uma explosão de cores, ritmos e emoções. Esse bloco vai agitar o seu carnaval!',
+      'Prepare-se para uma explosão de cores, ritmos e emoções!',
     local: 'Rio de Janeiro - RJ',
   },
   {
