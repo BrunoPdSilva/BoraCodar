@@ -1,3 +1,5 @@
+@import "_variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +16,102 @@
 body {
   font-size: 1.6rem;
   font-family: "Inter", sans-serif;
+
+  height: 100vh;
+  background-color: $background;
+  color: $white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  line-height: 160%;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 160%;
+
+  &.w-medium {
+    font-weight: 500;
+  }
+
+  &.c-green {
+    color: $green-text;
+  }
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 160%;
+}
+
+p {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 160%;
+
+  span {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 160%;
+  }
+}
+
+// $ Main
+main {
+  width: 112rem;
+  height: 75.2rem;
+
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "d d d";
+  column-gap: 3.2rem;
+  row-gap: 5.9rem;
+
+  section {
+    height: 37.9rem;
+    padding: 2.9rem 4.8rem;
+
+    background-color: $card;
+    box-shadow: $shadow;
+    border-radius: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.2rem;
+
+    &.nps {
+      width: 29.6rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+      }
+    }
+
+    &.closed-sales {
+      width: 35.1rem;
+    }
+
+    &.monthly-goal {
+      width: 40.9rem;
+    }
+
+    &.week-sales {
+      grid-area: d;
+      height: 31.4rem;
+    }
+  }
 }
