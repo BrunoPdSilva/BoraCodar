@@ -1,3 +1,33 @@
+svg {
+  --percentage: 0;
+  width: 19.7rem;
+  height: 19.7rem;
+  transform: rotate(-90deg);
+}
+
+svg circle {
+  stroke-dasharray: 618;
+  stroke-dashoffset: 618;
+  stroke-width: 35;
+  fill: none;
+}
+
+svg circle:nth-child(1) {
+  stroke-dashoffset: 0;
+}
+
+svg circle:nth-child(2) {
+  stroke-dashoffset: calc(618 - 618 * var(--percentage) / 100);
+  stroke-linecap: round;
+  animation: progress 1s ease-in-out;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 618;
+    stroke-dashoffset: 618;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 600;
   line-height: 160%;
 }
@@ -91,6 +121,41 @@ main section.closed-sales {
 }
 main section.monthly-goal {
   width: 40.9rem;
+}
+main section.closed-sales .medidor, main section.monthly-goal .medidor {
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+main section.closed-sales .medidor div, main section.monthly-goal .medidor div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+main section.closed-sales footer, main section.monthly-goal footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+}
+main section.closed-sales footer > div, main section.monthly-goal footer > div {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+main section.closed-sales footer > div .circle, main section.monthly-goal footer > div .circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #4A4556;
+}
+main section.closed-sales footer > div .circle.purple-gradient, main section.monthly-goal footer > div .circle.purple-gradient {
+  background: linear-gradient(121.94deg, #ce9ffc 15.98%, #7367f0 82.85%);
+}
+main section.closed-sales footer > div .circle.purple-gradient, main section.monthly-goal footer > div .circle.purple-gradient {
+  background: linear-gradient(121.94deg, #df9780 15.98%, #a66de9 82.85%);
 }
 main section.week-sales {
   grid-area: d;
