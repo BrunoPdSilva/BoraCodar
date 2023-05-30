@@ -1,4 +1,14 @@
-const options = {
+const dropdowns = document.querySelectorAll('.dropdown');
+
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener('click', e => {
+    const ul = dropdown.querySelector('ul')
+    
+    ul.classList.toggle('active');
+  })
+})
+
+/* const options = {
   series: [
     {
       name: "cambio",
@@ -99,3 +109,4 @@ const options = {
 
 const chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
+ */
