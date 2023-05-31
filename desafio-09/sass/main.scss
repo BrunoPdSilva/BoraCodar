@@ -1,5 +1,6 @@
 @use "_fonts";
 @use "_header";
+@use "_cambio";
 
 @import "_variables";
 
@@ -45,11 +46,9 @@ main {
   height: 51.2rem;
   width: clamp(32rem, 100%, 80rem);
   padding: 1.6rem;
-
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-
   background-color: $chart-background;
   border-radius: 1.6rem;
 }

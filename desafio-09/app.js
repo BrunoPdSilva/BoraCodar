@@ -1,14 +1,14 @@
-const dropdowns = document.querySelectorAll('.dropdown');
+const dropdowns = document.querySelectorAll(".dropdown");
 
-dropdowns.forEach((dropdown) => {
-  dropdown.addEventListener('click', e => {
-    const ul = dropdown.querySelector('ul')
-    
-    ul.classList.toggle('active');
-  })
-})
+dropdowns.forEach(dropdown => {
+  dropdown.addEventListener("click", e => {
+    const ul = dropdown.querySelector("ul");
 
-/* const options = {
+    ul.classList.toggle("active");
+  });
+});
+
+const options = {
   series: [
     {
       name: "cambio",
@@ -49,7 +49,7 @@ dropdowns.forEach((dropdown) => {
     },
   ],
   chart: {
-    height: 350,
+    height: 160,
     type: "area",
     toolbar: {
       show: false,
@@ -109,4 +109,3 @@ dropdowns.forEach((dropdown) => {
 
 const chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
- */

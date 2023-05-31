@@ -2,7 +2,7 @@ h1 {
   font-size: 1.6rem;
   font-weight: 600;
   line-height: 2.4rem;
-  color: #0F172A;
+  color: #0f172a;
   margin-bottom: 1.6rem;
 }
 
@@ -10,7 +10,7 @@ h2, li {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.4rem;
-  color: #0F172A;
+  color: #0f172a;
 }
 
 h3 {
@@ -41,12 +41,12 @@ header .wrapper .money-wrapper {
   height: 5.6rem;
   display: flex;
   align-items: center;
-  border: 0.1rem solid #94A3B8;
+  border: 0.1rem solid #94a3b8;
   border-radius: 0.8rem;
 }
 header .wrapper .money-wrapper:focus-within {
-  border: 0.2rem solid #7C3AED;
-  outline: #7C3AED;
+  border: 0.2rem solid #7c3aed;
+  outline: #7c3aed;
   outline-width: 1.5rem;
 }
 header .wrapper .money-wrapper input {
@@ -60,12 +60,12 @@ header .wrapper .money-wrapper input {
 header .wrapper .money-wrapper .dropdown {
   height: 100%;
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
   border-radius: 0 0.8rem 0.8rem 0;
-  position: relative;
-  cursor: pointer;
   transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 header .wrapper .money-wrapper .dropdown:hover {
   background-color: #ede9fe;
@@ -81,7 +81,7 @@ header .wrapper .money-wrapper .dropdown .selected::before {
   content: "";
   width: 0.1rem;
   height: 2.4rem;
-  background-color: #94A3B8;
+  background-color: #94a3b8;
   position: absolute;
   top: 1.6rem;
   left: 0;
@@ -100,7 +100,7 @@ header .wrapper .money-wrapper .dropdown ul {
   z-index: 999;
   display: none;
   flex-direction: column;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 0.8rem;
   box-shadow: 0px 0.4rem 3.2rem rgba(15, 23, 42, 0.15);
 }
@@ -117,6 +117,37 @@ header .wrapper .money-wrapper .dropdown ul li {
 }
 header .wrapper .money-wrapper .dropdown ul li:hover {
   background-color: #ede9fe;
+}
+
+section:nth-child(2) .wrapper {
+  margin-top: 2.4rem;
+}
+section:nth-child(2) .wrapper .tooltip {
+  padding: 0.8rem;
+  background-color: white;
+  border-radius: 0.4rem;
+  box-shadow: 0 0.4rem 1.6rem rgba(15, 23, 42, 0.15);
+}
+section:nth-child(2) .wrapper .chart-controls {
+  margin: -2.2rem 0.8rem 0 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+section:nth-child(2) .wrapper .chart-controls button {
+  width: 4rem;
+  height: 2.4rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+section:nth-child(2) .wrapper .chart-controls button:hover, section:nth-child(2) .wrapper .chart-controls button.active {
+  padding: 0.4rem 0.8rem;
+  color: white;
+  background-color: #7c3aed;
+  border-radius: 999rem;
 }
 
 * {
@@ -140,7 +171,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F8FAFC;
+  background-color: #f8fafc;
 }
 
 button {
@@ -164,7 +195,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 1.6rem;
 }
 
