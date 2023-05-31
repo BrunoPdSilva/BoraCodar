@@ -1,0 +1,22 @@
+@import '_variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100svh;
+  height: 100vh;
+  background-color: $gray-900;
+}
