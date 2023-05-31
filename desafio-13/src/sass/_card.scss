@@ -1,0 +1,72 @@
+@import "_variables";
+
+.card-wrapper {
+  height: 16.8rem;
+
+  &:hover > .card {
+    cursor: pointer;
+    transform: rotateY(180deg);
+  }
+
+  .card {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    transition: transform 1500ms;
+    transform-style: preserve-3d;
+
+    .front,
+    .back {
+      height: 100%;
+      width: 100%;
+      background-color: $gray-900;
+      box-shadow: $card-shadow;
+      border-radius: 1.6rem;
+      border: 0.1rem solid $gray-700;
+      position: absolute;
+      backface-visibility: hidden;
+      background-size: 100% 100%;
+    }
+
+    .front {
+      background-image: url(../assets/cc-front.png);
+      background-position: center;
+
+      h3 {
+        margin: 8.8rem 0 2.4rem 2.4rem;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+        color: $gray-50;
+      }
+
+      div {
+        padding-inline: 2.4rem;
+        display: flex;
+        justify-content: space-between;
+
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
+          line-height: 1.6rem;
+          color: $gray-50;
+          opacity: 0.5;
+        }
+      }
+    }
+
+    .back {
+      background-image: url(../assets/cc-back.png);
+      transform: rotateY(180deg);
+
+      p {
+        margin-top: 10.1rem;
+        margin-left: 18.1rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.6rem;
+        color: $gray-900;
+      }
+    }
+  }
+}

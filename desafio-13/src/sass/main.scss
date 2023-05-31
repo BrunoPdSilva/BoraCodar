@@ -1,4 +1,5 @@
 @use "_form";
+@use "_card";
 
 @import "_variables";
 
@@ -53,14 +54,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-
-  .card {
-    height: 16.8rem;
-    background-color: $gray-900;
-    border-radius: 1.6rem;
-    border: 0.1rem solid $gray-700;
-    box-shadow: $card-shadow;
-  }
 
   .safety {
     height: 2rem;

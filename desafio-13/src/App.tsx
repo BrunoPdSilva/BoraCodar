@@ -1,5 +1,5 @@
-import { ShieldCheck } from "./assets/ShieldCheck";
-import { FormField } from "./components/FormField"
+import { FormField } from "./components/FormField";
+import { Card } from "./components/Card";
 
 function App() {
   return (
@@ -14,17 +14,13 @@ function App() {
           </div>
         </form>
         <div className="card-container">
-          <div className="card"></div>
-
-          <h3 className="safety">
-            <ShieldCheck />
-            Seus dados estão seguros
-          </h3>
+         <Card />
         </div>
       </section>
+      
       <button>Adicionar cartão</button>
     </main>
   );
 }
 
-export default App
+export default App;
