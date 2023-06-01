@@ -1,0 +1,180 @@
+.DropdownMenuContent {
+  min-width: 37.5rem;
+  padding: 2.4rem 2.4rem 1.6rem;
+}
+
+.DropdownMenuSubContent {
+  padding: 1.6rem 2.4rem 1.6rem;
+}
+
+.DropdownMenuContent,
+.DropdownMenuSubContent {
+  border-radius: 1.2rem;
+  background-color: var(--gray-500);
+  border: 0.1rem solid var(--gray-400);
+  box-shadow: var(--shadow);
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.user {
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.user h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  color: var(--gray-100);
+  margin-bottom: 0.4rem;
+}
+
+.user p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.8rem;
+  color: var(--gray-200);
+}
+
+.DropdownMenuContent[data-side="top"],
+.DropdownMenuSubContent[data-side="top"] {
+  animation-name: slideDownAndFade;
+}
+.DropdownMenuContent[data-side="right"],
+.DropdownMenuSubContent[data-side="right"] {
+  animation-name: slideLeftAndFade;
+}
+.DropdownMenuContent[data-side="bottom"],
+.DropdownMenuSubContent[data-side="bottom"] {
+  animation-name: slideUpAndFade;
+}
+.DropdownMenuContent[data-side="left"],
+.DropdownMenuSubContent[data-side="left"] {
+  animation-name: slideRightAndFade;
+}
+
+.DropdownMenuItem,
+.DropdownMenuSubTrigger {
+  height: 3.6rem;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2rem;
+  color: var(--gray-100);
+
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  position: relative;
+  user-select: none;
+  outline: none;
+}
+
+.DropdownMenuSubTrigger[data-state="open"] {
+  background-color: var(--violet4);
+  color: var(--violet11);
+}
+
+.DropdownMenuItem[data-highlighted],
+.DropdownMenuSubTrigger[data-highlighted] {
+  transform: scale(1.02);
+}
+
+.DropdownMenuLabel {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 4%;
+  color: var(--gray-300);
+  margin-bottom: 1.2rem;
+}
+
+.DropdownMenuSeparator {
+  height: 0.1rem;
+  width: 100%;
+  background-color: var(--gray-400);
+  margin-block: 1.6rem;
+}
+
+.IconButton {
+  margin-top: 7.2rem;
+  height: 3.5rem;
+  width: 3.5rem;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0.2rem 1rem #00000050;
+  border: 0;
+}
+
+.IconButton:hover {
+  background-color: #e9dff6;
+}
+.IconButton:focus-visible {
+  outline: 0.2rem solid white;
+  outline-offset: 0.2rem;
+}
+
+.RightSlot {
+  margin-left: auto;
+  padding-left: 2rem;
+  transform: translateY(0.3rem);
+}
+
+.logout {
+  color: var(--red);
+}
+
+@keyframes slideUpAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRightAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideDownAndFade {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftAndFade {
+  from {
+    opacity: 0;
+    transform: translateX(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
