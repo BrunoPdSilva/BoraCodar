@@ -1,13 +1,14 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
   Bell,
-  CaretRight,
   BellSlash,
   BellSimpleZ,
   Person,
   TextAa,
   PaintRoller,
 } from "phosphor-react";
+import { DropdownSubTrigger } from "./DropdownSubTrigger";
+import { DropdownItem } from "./DropdownItem";
 
 export function DropdownPreferences() {
   return (
@@ -15,13 +16,7 @@ export function DropdownPreferences() {
       <DropdownMenu.Label className="DropdownMenuLabel">PREFERÊNCIAS</DropdownMenu.Label>
 
       <DropdownMenu.Sub>
-        <DropdownMenu.SubTrigger className="DropdownMenuSubTrigger">
-          <Bell size={20} />
-          Notificações{" "}
-          <div className="RightSlot">
-            <CaretRight size={16} color="var(--gray-300)" />
-          </div>
-        </DropdownMenu.SubTrigger>
+        <DropdownSubTrigger title="Notificações" caret={true} Icon={Bell} />
 
         <DropdownMenu.Portal>
           <DropdownMenu.SubContent
@@ -29,25 +24,14 @@ export function DropdownPreferences() {
             sideOffset={24}
             alignOffset={-24}
           >
-            <DropdownMenu.Item className="DropdownMenuItem">
-              <BellSlash size={20} />
-              Silenciar notificações
-            </DropdownMenu.Item>
-            <DropdownMenu.Item className="DropdownMenuItem">
-              <BellSimpleZ size={20} /> Não incomodar
-            </DropdownMenu.Item>
+            <DropdownItem title="Silenciar notificações" Icon={BellSlash}/>
+            <DropdownItem title="Não incomodar" Icon={BellSimpleZ}/>
           </DropdownMenu.SubContent>
         </DropdownMenu.Portal>
       </DropdownMenu.Sub>
 
       <DropdownMenu.Sub>
-        <DropdownMenu.SubTrigger className="DropdownMenuSubTrigger">
-          <Person size={20} />
-          Acessibilidade{" "}
-          <div className="RightSlot">
-            <CaretRight size={16} color="var(--gray-300)" />
-          </div>
-        </DropdownMenu.SubTrigger>
+        <DropdownSubTrigger title="Acessibilidade" caret={true} Icon={Person} />
 
         <DropdownMenu.Portal>
           <DropdownMenu.SubContent
@@ -55,13 +39,8 @@ export function DropdownPreferences() {
             sideOffset={24}
             alignOffset={-24}
           >
-            <DropdownMenu.Item className="DropdownMenuItem">
-              <TextAa size={20} />
-              Fonte
-            </DropdownMenu.Item>
-            <DropdownMenu.Item className="DropdownMenuItem">
-              <PaintRoller size={20} /> Tema
-            </DropdownMenu.Item>
+            <DropdownItem title="Fonte" Icon={TextAa}/>
+            <DropdownItem title="Tema" Icon={PaintRoller}/>
           </DropdownMenu.SubContent>
         </DropdownMenu.Portal>
       </DropdownMenu.Sub>
