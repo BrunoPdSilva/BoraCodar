@@ -1,0 +1,149 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../assets/background.png) no-repeat center/cover;
+  filter: blur(2rem);
+  z-index: -1;
+}
+body main {
+  width: 109rem;
+  height: 48rem;
+  display: flex;
+  gap: 3.2rem;
+}
+body main .temperature-now {
+  width: 48rem;
+  height: 48rem;
+  background: url(../assets/background2.png) no-repeat center/cover;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .temperature-now .local {
+  width: fit-content;
+  padding-top: 3.2rem;
+  margin-inline: auto 3.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+body main .temperature-now .local p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+  color: #c2bff4;
+}
+body main .temperature-now .temperature {
+  margin-block: 6rem 16.2rem;
+}
+body main .temperature-now .temperature h1 {
+  font-size: 8.8rem;
+  font-weight: 700;
+  line-height: 10.6rem;
+  color: #FFFFFF;
+  position: relative;
+}
+body main .temperature-now .temperature h1::after {
+  content: "ºC";
+  position: absolute;
+  top: 2rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.9rem;
+  color: #dad8f7;
+}
+body main .temperature-now .temperature h3 {
+  margin-left: 0.8rem;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  text-align: center;
+  color: #FFFFFF;
+}
+body main .temperature-now .temperature h3 span {
+  color: #c2bff4;
+}
+body main .temperature-now .statistics {
+  display: flex;
+  gap: 0.8rem;
+  margin: 0 1.2rem 1.2rem;
+}
+body main .temperature-now .statistics > div {
+  width: 14.6rem;
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  background: rgba(102, 96, 200, 0.6);
+  border-radius: 0.6rem;
+}
+body main .temperature-now .statistics > div div h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: #e7e6fb;
+}
+body main .temperature-now .statistics > div div h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: #e7e6fb;
+}
+body main .temperature-now .statistics > div div h2 span {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+  color: #dad8f7;
+}
+body main .right {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "a b" "c c";
+  gap: 2.4rem;
+}
+body main .right section {
+  width: 100%;
+  height: 100%;
+  background-color: #6d67d0;
+  border-radius: 1rem;
+}
+body main .right section.air-quality, body main .right section.sun-time {
+  width: 27.7rem;
+  height: 24.4rem;
+}
+body main .right section.week-weather {
+  width: 100%;
+  height: 21.2rem;
+  padding: 4rem;
+  grid-area: c;
+}
+
+/*# sourceMappingURL=styles.css.map */
