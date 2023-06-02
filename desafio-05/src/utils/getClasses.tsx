@@ -4,16 +4,14 @@ interface Props {
 }
 
 export function getClasses(item: Props) {
-  let classes = '';
+  let classes = "";
 
   const isNotPurple =
-    item.value.includes('=') ||
-    item.value.includes('+/-') ||
-    item.value.includes('%');
+    item.value.includes("=") || item.value.includes("+/-") || item.value.includes("%");
 
-  if (item.icon && !isNotPurple) classes += ' operation';
-  if (item.value === '=') classes += ' equal';
-  if (item.value === 'CE') classes += ' ce';
+  if (item.icon && !isNotPurple) classes += " operation";
+  if (item.value === "=") classes += " equal";
+  if (item.value === "CE") classes += " ce";
 
   return classes;
 }

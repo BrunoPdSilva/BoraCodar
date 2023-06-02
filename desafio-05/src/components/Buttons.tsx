@@ -1,6 +1,6 @@
-import { handlePress, handleRelease } from '../utils/buttonPress';
-import { calculatorValues } from '../utils/calculatorValues';
-import { getClasses } from '../utils/getClasses';
+import { handlePress, handleRelease } from "../utils/buttonPress";
+import { calculatorValues } from "../utils/calculatorValues";
+import { getClasses } from "../utils/getClasses";
 
 interface Props {
   addValue: (value: string) => void;
@@ -13,21 +13,21 @@ interface Props {
 export function Buttons(props: Props) {
   function getButtonOperation(type: string) {
     switch (type) {
-      case 'CE':
-      case 'C':
+      case "CE":
+      case "C":
         props.clearValues();
         break;
-      case '=':
+      case "=":
         props.calculateResult();
         break;
-      case '%':
+      case "%":
         props.percent();
         break;
-      case '+/-':
+      case "+/-":
         props.negate();
         break;
-      case ',':
-        props.addValue('.');
+      case ",":
+        props.addValue(".");
         break;
       default:
         props.addValue(type);

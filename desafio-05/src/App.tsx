@@ -1,6 +1,6 @@
-import { Equals } from 'phosphor-react';
-import { Buttons } from './components/Buttons';
-import { useState } from 'react';
+import { Equals } from "phosphor-react";
+import { Buttons } from "./components/Buttons";
+import { useState } from "react";
 
 function App() {
   const [values, setValues] = useState<(string | string[])[]>([[]]);
@@ -28,7 +28,7 @@ function App() {
       return;
     }
 
-    if (value === '.' && Array.isArray(lastValue) && lastValue.includes('.')) {
+    if (value === "." && Array.isArray(lastValue) && lastValue.includes(".")) {
       return;
     }
 
@@ -40,15 +40,15 @@ function App() {
   }
 
   function getEvalStr(array: (string | string[])[]) {
-    return array.flat().join('');
+    return array.flat().join("");
   }
 
   function isOperator(value: string | string[]) {
     if (Array.isArray(value)) {
-      return value.every(item => ['+', '-', '*', '/'].includes(item));
+      return value.every(item => ["+", "-", "*", "/"].includes(item));
     }
 
-    return ['+', '-', '*', '/'].includes(value);
+    return ["+", "-", "*", "/"].includes(value);
   }
 
   function clearValues() {

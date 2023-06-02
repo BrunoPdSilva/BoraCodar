@@ -1,17 +1,10 @@
-import { CaretDown, MagnifyingGlass, MapPin } from 'phosphor-react';
-import {
-  Dispatch,
-  FormEvent,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import { Dropdown } from './Dropdown';
-import { Filter } from '../App';
+import { CaretDown, MagnifyingGlass, MapPin } from "phosphor-react";
+import { Dispatch, FormEvent, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dropdown } from "./Dropdown";
+import { Filter } from "../App";
 
-import topIllustration from '../assets/ilustra-01.svg';
-import bottomIllustration from '../assets/ilustra-02.svg';
+import topIllustration from "../assets/ilustra-01.svg";
+import bottomIllustration from "../assets/ilustra-02.svg";
 
 interface Props {
   setFilter: Dispatch<SetStateAction<Filter | null>>;
@@ -19,8 +12,8 @@ interface Props {
 
 export function Header({ setFilter }: Props) {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [dropdownValue, setDropdownValue] = useState('');
-  const [searchValue, setSearchValue] = useState('');
+  const [dropdownValue, setDropdownValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,9 +25,9 @@ export function Header({ setFilter }: Props) {
       }
     }
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, []);
 
@@ -84,7 +77,7 @@ export function Header({ setFilter }: Props) {
               onClick={() => setShowDropdown(!showDropdown)}
             >
               <MapPin size={24} color="#E45858" />
-              <p>{dropdownValue || 'Selecione uma cidade'}</p>
+              <p>{dropdownValue || "Selecione uma cidade"}</p>
               <button type="button">
                 <CaretDown size={24} color="#858793" />
               </button>

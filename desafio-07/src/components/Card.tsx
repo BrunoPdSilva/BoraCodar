@@ -1,4 +1,4 @@
-import { MapPin } from 'phosphor-react';
+import { MapPin } from "phosphor-react";
 
 interface Props {
   block: { img: string; title: string; description: string; local: string };
