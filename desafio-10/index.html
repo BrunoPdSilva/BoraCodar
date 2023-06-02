@@ -11,24 +11,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>Página de clima</title>
+    <title>Página de clima</title>  
   </head>
   <body>
     <main>
       <section class="temperature-now">
-        <div class="local">
+        <span class="local">
           <img src="./assets/pin.svg" alt="Pin Icon" />
-          <p>Rio do Sul, SC</p>
-        </div>
+          Rio do Sul, SC
+        </span>
 
         <div class="temperature">
           <h1>18</h1>
-
           <h3>22º <span>16º</span></h3>
         </div>
 
         <div class="statistics">
-          <div>
+          <div class="card">
             <img src="./assets/wind.svg" alt="Wind Icon" />
 
             <div>
@@ -36,7 +35,7 @@
               <h2>17 <span>km/h</span></h2>
             </div>
           </div>
-          <div>
+          <div class="card"> 
             <img src="./assets/umidity.svg" alt="Wind Icon" />
 
             <div>
@@ -44,7 +43,7 @@
               <h2>31 <span>%</span></h2>
             </div>
           </div>
-          <div>
+          <div class="card">
             <img src="./assets/rain.svg" alt="Wind Icon" />
             <div>
               <h3>Chuva</h3>
@@ -54,10 +53,97 @@
         </div>
       </section>
 
-      <div class="right">
-        <section class="air-quality"></section>
-        <section class="sun-time"></section>
-        <section class="week-weather"></section>
+      <div class="grid">
+        <section class="air-quality">
+          <h2 class="title">
+            <img src="./assets/leaf.svg" alt="Leaf">
+            Qualidade do ar
+          </h2>
+
+          <div class="air-status">
+            <p>Boa</p>
+            <h1>21</h1>
+          </div>
+
+          <ul>
+            <li>
+              <p>12.9</p>
+              <h3>PM2.5</h3>
+            </li>
+            <li>
+              <p>12.9</p>
+              <h3>PM10</h3>
+            </li>
+            <li>
+              <p>2.1</p>
+              <h3>SO<span>2</span></h3>
+            </li>
+            <li>
+              <p>1.4</p>
+              <h3>NO<span>2</span></h3>
+            </li>
+            <li>
+              <p>21.2</p>
+              <h3>O<span>3</span></h3>
+            </li>
+            <li>
+              <p>0.7</p>
+              <h3>CO</h3>
+            </li>
+          </ul>
+        </section>
+
+        <section class="sun-time">
+          <h2 class="title">
+            <img src="./assets/time.svg" alt="Leaf">
+            Horário do sol
+          </h2>
+
+          <div class="sun-chart-wrapper">
+            <div class="sun-chart">
+              <div class="chart">
+                <img
+                  src="./assets/sun-chart.svg"
+                  alt="imagem de um gráfico semi circulo com traços"
+                />
+              </div>
+              <time class="now">17:48</time>
+            </div>
+          </div>
+          
+          <div class="time">
+            <time class="sunrise">06:00</time>
+            <time class="sunset">18:52</time>
+          </div>
+          
+        </section>
+        <section class="week-weather">
+          <div>
+            <h2>Amanhã</h2>
+            <img src="./assets/cloud.svg" alt="Cloud">
+            <p>21º <span>16º</span></p>
+          </div>
+          <div>
+            <h2>Sexta-feira</h2>
+            <img src="./assets/sun.svg" alt="Cloud">
+            <p>28º <span>20º</span></p>
+          </div>
+          <div>
+            <h2>Sábado</h2>
+            <img src="./assets/umidity2.svg" alt="Cloud">
+            <p>25º <span>21º</span></p>
+          </div>
+          <div>
+            <h2>Domingo</h2>
+            <img src="./assets/tempest.svg" alt="Cloud">
+            <p>20º <span>14º</span></p>
+          </div>
+          <div>
+            <h2>Segunda-feira</h2>
+            <img src="./assets/sunnyCloud.svg" alt="Cloud">
+            <p>24º <span>18º</span></p>
+          </div>
+        </section>
       </div>
     </main>
   </body>

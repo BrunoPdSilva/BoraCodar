@@ -1,4 +1,88 @@
 @charset "UTF-8";
+.temperature-now {
+  width: 48rem;
+  height: 48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../assets/background2.png) no-repeat center/cover;
+  border-radius: 1rem;
+  position: relative;
+}
+.temperature-now::after {
+  content: "";
+  width: 17.6rem;
+  height: 17.6rem;
+  position: absolute;
+  top: -6rem;
+  left: -8rem;
+  background-image: url(../assets/cloud.svg);
+}
+.temperature-now .local {
+  width: fit-content;
+  margin-inline: auto 3.2rem;
+  padding-top: 3.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #c2bff4;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.temperature-now .temperature {
+  margin-block: 6rem 16.2rem;
+  width: 10.3rem;
+  text-align: center;
+}
+.temperature-now .temperature h1 {
+  font-size: 8.8rem;
+  line-height: 10.6rem;
+  color: #FFFFFF;
+  position: relative;
+}
+.temperature-now .temperature h1::after {
+  content: "ºC";
+  position: absolute;
+  top: -2rem;
+  font-size: 2.4rem;
+  color: #dad8f7;
+}
+.temperature-now .temperature h3 {
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+.temperature-now .temperature h3 span {
+  color: #c2bff4;
+}
+.temperature-now .statistics {
+  margin: 0 1.2rem 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+.temperature-now .statistics .card {
+  width: 14.6rem;
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  gap: 1.2rem;
+  background: rgba(102, 96, 200, 0.6);
+  border-radius: 0.6rem;
+}
+.temperature-now .statistics .card div {
+  color: #e7e6fb;
+}
+.temperature-now .statistics .card div h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+.temperature-now .statistics .card div h2 {
+  font-size: 1.8rem;
+}
+.temperature-now .statistics .card div h2 span {
+  font-size: 1.4rem;
+  color: #dad8f7;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,14 +108,17 @@ body {
 }
 body::before {
   content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
   background: url(../assets/background.png) no-repeat center/cover;
   filter: blur(2rem);
-  z-index: -1;
+}
+body ul {
+  list-style: none;
 }
 body main {
   width: 109rem;
@@ -39,111 +126,163 @@ body main {
   display: flex;
   gap: 3.2rem;
 }
-body main .temperature-now {
-  width: 48rem;
-  height: 48rem;
-  background: url(../assets/background2.png) no-repeat center/cover;
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-body main .temperature-now .local {
-  width: fit-content;
-  padding-top: 3.2rem;
-  margin-inline: auto 3.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-body main .temperature-now .local p {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.7rem;
-  color: #c2bff4;
-}
-body main .temperature-now .temperature {
-  margin-block: 6rem 16.2rem;
-}
-body main .temperature-now .temperature h1 {
-  font-size: 8.8rem;
-  font-weight: 700;
-  line-height: 10.6rem;
-  color: #FFFFFF;
-  position: relative;
-}
-body main .temperature-now .temperature h1::after {
-  content: "ºC";
-  position: absolute;
-  top: 2rem;
-  font-size: 2.4rem;
-  font-weight: 700;
-  line-height: 2.9rem;
-  color: #dad8f7;
-}
-body main .temperature-now .temperature h3 {
-  margin-left: 0.8rem;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 2.4rem;
-  text-align: center;
-  color: #FFFFFF;
-}
-body main .temperature-now .temperature h3 span {
-  color: #c2bff4;
-}
-body main .temperature-now .statistics {
-  display: flex;
-  gap: 0.8rem;
-  margin: 0 1.2rem 1.2rem;
-}
-body main .temperature-now .statistics > div {
-  width: 14.6rem;
-  display: flex;
-  gap: 1.2rem;
-  padding: 1.2rem 1.6rem;
-  background: rgba(102, 96, 200, 0.6);
-  border-radius: 0.6rem;
-}
-body main .temperature-now .statistics > div div h3 {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.4rem;
-  color: #e7e6fb;
-}
-body main .temperature-now .statistics > div div h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 2.2rem;
-  color: #e7e6fb;
-}
-body main .temperature-now .statistics > div div h2 span {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.7rem;
-  color: #dad8f7;
-}
-body main .right {
+body main .grid {
   width: 100%;
   display: grid;
   grid-template-areas: "a b" "c c";
   gap: 2.4rem;
 }
-body main .right section {
-  width: 100%;
-  height: 100%;
+body main .grid section {
   background-color: #6d67d0;
   border-radius: 1rem;
 }
-body main .right section.air-quality, body main .right section.sun-time {
+body main .grid section.air-quality, body main .grid section.sun-time {
   width: 27.7rem;
   height: 24.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-body main .right section.week-weather {
+body main .grid section.air-quality .title, body main .grid section.sun-time .title {
+  margin-top: 3.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  color: #dad8f7;
+}
+body main .grid section.air-quality {
+  gap: 3.2rem;
+}
+body main .grid section.air-quality .air-status {
+  text-align: center;
+}
+body main .grid section.air-quality .air-status p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.2rem;
+  color: #87ebcd;
+}
+body main .grid section.air-quality .air-status h1 {
+  font-size: 4rem;
+  color: #e7e6fb;
+}
+body main .grid section.air-quality ul {
+  display: flex;
+  gap: 1.6rem;
+}
+body main .grid section.air-quality ul li {
+  text-align: center;
+}
+body main .grid section.air-quality ul li p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #87ebcd;
+}
+body main .grid section.air-quality ul li h3 {
+  margin-top: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.4rem;
+  color: #e7e6fb;
+}
+body main .grid section.sun-time .sun-chart-wrapper {
+  margin-top: 4rem;
+  height: 11rem;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart {
+  --pos-x: 75;
+  margin: auto;
+  width: 21.6rem;
+  height: 21.6rem;
+  position: relative;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart::after {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: #f6c833;
+  position: absolute;
+  top: 2.8rem;
+  left: 17.5rem;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart time.now {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart .chart {
+  width: 21.6rem;
+  height: 10.8rem;
+  overflow: hidden;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart .chart img {
+  position: absolute;
+  top: 0;
+  left: -1%;
+}
+body main .grid section.sun-time .sun-chart-wrapper .sun-chart .chart::before {
+  content: "";
+  width: 21rem;
+  height: 21rem;
+  display: block;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(251, 219, 96, 0.2) 0%, rgba(251, 219, 96, 0) 101.89%);
+  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+  mask: var(--mask);
+  -webkit-mask: var(--mask);
+  rotate: calc(1.825deg * var(--pos-x));
+}
+body main .grid section.sun-time .time {
+  width: 100%;
+  font-size: 1.2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 0 1.6rem 1.6rem;
+}
+body main .grid section.week-weather {
   width: 100%;
   height: 21.2rem;
   padding: 4rem;
   grid-area: c;
+  display: flex;
+  gap: 1.2rem;
+}
+body main .grid section.week-weather div {
+  width: 9rem;
+  height: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+body main .grid section.week-weather div h2 {
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #dad8f7;
+}
+body main .grid section.week-weather div img {
+  width: 6.4rem;
+  height: 6.4rem;
+  object-fit: contain;
+}
+body main .grid section.week-weather div p {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  color: #FFFFFF;
+}
+body main .grid section.week-weather div p span {
+  color: #c2bff4;
 }
 
 /*# sourceMappingURL=styles.css.map */

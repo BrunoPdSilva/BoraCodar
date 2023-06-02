@@ -1,3 +1,4 @@
+@use "_temperature-now";
 @import "_variables";
 
 * {
@@ -18,7 +19,6 @@ body {
   font-size: 1.6rem;
   height: 100vh;
   height: 100svh;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,131 +26,28 @@ body {
 
   &::before {
     content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
     background: url(../assets/background.png) no-repeat center/cover;
     filter: blur(2rem);
-    z-index: -1;
+  }
+
+  ul {
+    list-style: none;
   }
 
   main {
     width: 109rem;
     height: 48rem;
-
     display: flex;
     gap: 3.2rem;
 
-    .temperature-now {
-      width: 48rem;
-      height: 48rem;
-      background: url(../assets/background2.png) no-repeat center/cover;
-      border-radius: 1rem;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      .local {
-        width: fit-content;
-        padding-top: 3.2rem;
-        margin-inline: auto 3.2rem;
-
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-
-        p {
-          font-size: 1.4rem;
-          font-weight: 700;
-          line-height: 1.7rem;
-          color: $gray-300;
-        }
-      }
-
-      .temperature {
-        margin-block: 6rem 16.2rem;
-
-        h1 {
-          font-size: 8.8rem;
-          font-weight: 700;
-          line-height: 10.6rem;
-          color: $white;
-          position: relative;
-
-          &::after {
-            content: "ºC";
-
-            position: absolute;
-            top: 2rem;
-
-            font-size: 2.4rem;
-            font-weight: 700;
-            line-height: 2.9rem;
-            color: $gray-200;
-          }
-        }
-
-        h3 {
-          margin-left: 0.8rem;
-          font-size: 2rem;
-          font-weight: 700;
-          line-height: 2.4rem;
-          text-align: center;
-          color: $white;
-
-          span {
-            color: $gray-300;
-          }
-        }
-      }
-
-      .statistics {
-        display: flex;
-        gap: 0.8rem;
-
-        margin: 0 1.2rem 1.2rem;
-
-        & > div {
-          width: 14.6rem;
-          display: flex;
-          gap: 1.2rem;
-          padding: 1.2rem 1.6rem;
-
-          background: rgba(102, 96, 200, 0.6);
-          border-radius: 0.6rem;
-
-          div {
-            h3 {
-              font-size: 1.2rem;
-              font-weight: 400;
-              line-height: 1.4rem;
-              color: $gray-100;
-            }
-
-            h2 {
-              font-size: 1.8rem;
-              font-weight: 700;
-              line-height: 2.2rem;
-              color: $gray-100;
-
-              span {
-                font-size: 1.4rem;
-                font-weight: 700;
-                line-height: 1.7rem;
-                color: $gray-200;
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .right {
+    .grid {
       width: 100%;
-
       display: grid;
       grid-template-areas:
         "a b"
@@ -158,9 +55,6 @@ body {
       gap: 2.4rem;
 
       section {
-        width: 100%;
-        height: 100%;
-
         background-color: $card-bg;
         border-radius: 1rem;
 
@@ -168,6 +62,147 @@ body {
         &.sun-time {
           width: 27.7rem;
           height: 24.4rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .title {
+            margin-top: 3.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.6rem;
+            line-height: 1.9rem;
+            color: $gray-200;
+          }
+        }
+
+        &.air-quality {
+          gap: 3.2rem;
+
+          .air-status {
+            text-align: center;
+
+            p {
+              font-size: 1.8rem;
+              font-weight: 700;
+              line-height: 2.2rem;
+              color: $blue;
+            }
+
+            h1 {
+              font-size: 4rem;
+              color: $gray-100;
+            }
+          }
+
+          ul {
+            display: flex;
+            gap: 1.6rem;
+
+            li {
+              text-align: center;
+
+              p {
+                font-size: 1.4rem;
+                font-weight: 700;
+                color: $blue;
+              }
+
+              h3 {
+                margin-top: 0.2rem;
+                font-size: 1.2rem;
+                font-weight: 400;
+                line-height: 1.4rem;
+                color: $gray-100;
+              }
+            }
+          }
+        }
+
+        &.sun-time {
+          .sun-chart-wrapper {
+            margin-top: 4rem;
+            height: 11rem;
+
+            .sun-chart {
+              --pos-x: 75;
+              margin: auto;
+              width: 21.6rem;
+              height: 21.6rem;
+
+              position: relative;
+
+              &::after {
+                content: "";
+                width: 1.2rem;
+                height: 1.2rem;
+                border-radius: 50%;
+                background-color: $yellow;
+                position: absolute;
+                top: 2.8rem;
+                left: 17.5rem;
+              }
+
+              time.now {
+                position: absolute;
+
+                top: 25%;
+                left: 50%;
+                transform: translate(-50%);
+
+                color: white;
+                font-size: 1.4rem;
+                font-weight: 700;
+              }
+
+              .chart {
+                width: 21.6rem;
+                height: 10.8rem;
+                overflow: hidden;
+
+                img {
+                  position: absolute;
+                  top: 0;
+                  left: -1%;
+                }
+
+                &::before {
+                  content: "";
+                  width: 21rem;
+                  height: 21rem;
+
+                  display: block;
+                  border-radius: 50%;
+
+                  background: linear-gradient(
+                    180deg,
+                    rgba(251, 219, 96, 0.2) 0%,
+                    rgba(251, 219, 96, 0) 101.89%
+                  );
+
+                  --mask: linear-gradient(0deg, white 50%, transparent 0%);
+                  mask: var(--mask);
+                  -webkit-mask: var(--mask);
+
+                  rotate: calc(1.825deg * var(--pos-x));
+                }
+              }
+            }
+          }
+
+          .time {
+            width: 100%;
+            font-size: 1.2rem;
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin: 1rem auto 0;
+            padding: 0 1.6rem 1.6rem;
+          }
         }
 
         &.week-weather {
@@ -175,6 +210,42 @@ body {
           height: 21.2rem;
           padding: 4rem;
           grid-area: c;
+
+          display: flex;
+          gap: 1.2rem;
+
+          div {
+            width: 9rem;
+            height: 3.2rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.6rem;
+
+            h2 {
+              font-size: 1.4rem;
+              line-height: 1.7rem;
+              color: $gray-200;
+            }
+
+            img {
+              width: 6.4rem;
+              height: 6.4rem;
+              object-fit: contain;
+            }
+
+            p {
+              font-size: 1.6rem;
+              font-weight: 700;
+              line-height: 1.9rem;
+              color: $white;
+
+              span {
+                color: $gray-300;
+              }
+            }
+          }
         }
       }
     }

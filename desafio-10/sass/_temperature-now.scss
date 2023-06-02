@@ -1,0 +1,98 @@
+@import "_variables";
+
+.temperature-now {
+  width: 48rem;
+  height: 48rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../assets/background2.png) no-repeat center/cover;
+  border-radius: 1rem;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 17.6rem;
+    height: 17.6rem;
+    position: absolute;
+    top: -6rem;
+    left: -8rem;
+    background-image: url(../assets/cloud.svg);
+  }
+
+  .local {
+    width: fit-content;
+    margin-inline: auto 3.2rem;
+    padding-top: 3.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: $gray-300;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .temperature {
+    margin-block: 6rem 16.2rem;
+    width: 10.3rem;
+    text-align: center;
+
+    h1 {
+      font-size: 8.8rem;
+      line-height: 10.6rem;
+      color: $white;
+      position: relative;
+
+      &::after {
+        content: "ºC";
+        position: absolute;
+        top: -2rem;
+        font-size: 2.4rem;
+        color: $gray-200;
+      }
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $white;
+
+      span {
+        color: $gray-300;
+      }
+    }
+  }
+
+  .statistics {
+    margin: 0 1.2rem 1.2rem;
+    display: flex;
+    gap: 0.8rem;
+
+    .card {
+      width: 14.6rem;
+      padding: 1.2rem 1.6rem;
+      display: flex;
+      gap: 1.2rem;
+      background: rgba(102, 96, 200, 0.6);
+      border-radius: 0.6rem;
+
+      div {
+        color: $gray-100;
+        
+        h3 {
+          font-size: 1.2rem;
+          font-weight: 400;
+          line-height: 1.4rem;
+        }
+
+        h2 {
+          font-size: 1.8rem;
+
+          span {
+            font-size: 1.4rem;
+            color: $gray-200;
+          }
+        }
+      }
+    }
+  }
+}
