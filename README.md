@@ -15,8 +15,6 @@ Projetos semanais do BoraCodar da Rocketseat.
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 </p>
 
-<br>
-
 ## 🚀 Tecnologias
 
 Algumas das tecnologias utilizadas nos projetos:
