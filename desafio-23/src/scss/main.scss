@@ -1,3 +1,4 @@
+@use "_header";
 @import "_variables";
 
 * {
@@ -16,6 +17,14 @@
 
 body {
   font-size: 1.6rem;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
 }
 
 ::placeholder {
@@ -30,4 +39,13 @@ h2 {
   font-weight: 700;
   line-height: 150%;
   color: $gray-400;
+}
+
+main {
+  width: 100%;
+  max-width: 59.2rem;
+  margin-inline: auto;
+  padding: 3.2rem;
+  border: $border;
+  border-radius: 0.6rem;
 }
