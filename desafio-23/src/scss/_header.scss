@@ -24,6 +24,7 @@ header {
       font-size: 1.4rem;
       font-weight: 700;
       line-height: 150%;
+      color: $gray-300;
 
       &.active {
         background-color: $purple-mid;
@@ -34,6 +35,10 @@ header {
         background-color: $green;
         color: $white;
       }
+    }
+
+    h2.disabled {
+      color: $gray-300;
     }
   }
 }

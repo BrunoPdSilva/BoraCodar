@@ -1,0 +1,75 @@
+@import "_variables";
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  .formField {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    input {
+      height: 5.6rem;
+      padding: 0.8rem 1.6rem;
+      background: 0;
+      border: $border;
+      border-radius: 0.2rem;
+      font-family: "IBM Plex Sans", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      line-height: 150%;
+      color: $gray-400;
+      transition: border 300ms ease-in-out;
+
+      &::placeholder {
+        color: $gray-200;
+      }
+
+      &:hover,
+      &:focus-visible {
+        border: 0.1rem solid $purple-mid;
+        outline: 0;
+      }
+    }
+  }
+
+  .action-buttons {
+    margin-top: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      height: 5.6rem;
+      padding: 1.6rem 3.2rem;
+      border-radius: 0.6rem;
+      border: 0.1rem solid $purple-mid;
+      background: 0;
+      font-family: "IBM Flex Sans", sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 150%;
+      color: $purple-mid;
+      cursor: pointer;
+      transition: background 300ms ease-in-out;
+
+      &.primary {
+        margin-left: auto;
+        background: $purple-mid;
+        color: $white;
+        border: 0;
+
+        &:hover {
+          background: $purple-light;
+          transition: background 300ms ease-in-out;
+        }
+      }
+
+      &:hover {
+        background-color: #f0ecf9;
+      }
+    }
+  }
+}
