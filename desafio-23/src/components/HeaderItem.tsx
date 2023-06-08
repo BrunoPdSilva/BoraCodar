@@ -1,20 +1,24 @@
 import { Check } from "phosphor-react";
 
 interface Props {
-  status?: "active" | "filled";
   number: string;
   text: string;
+  page: number;
 }
 
-export function HeaderItem({ status, number, text }: Props) {
-  const isDisabled = status !== "active" && status !== "filled";
+export function HeaderItem({ number, text, page }: Props) {
+  function getStatus() {
+    if (page === Number(number)) return "active";
+    if (page > Number(number)) return "filled";
+    return "disabled"
+  }
 
   return (
     <div>
-      <h3 className={status}>
-        {status !== "filled" ? number : <Check size={20} weight="bold" />}
+      <h3 className={getStatus()}>
+        {page > Number(number) ? <Check size={20} weight="bold" /> : number}
       </h3>
-      <h2 className={isDisabled ? "disabled" : ""}>{text}</h2>
+      <h2 className={getStatus()}>{text}</h2>
     </div>
   );
 }
