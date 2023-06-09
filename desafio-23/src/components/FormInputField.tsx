@@ -9,5 +9,5 @@ export function FormInputField({ label, placeholder }: Props) {
       <label>{label}</label>
       <input type="text" placeholder={placeholder} />
     </div>
-  )
+  );
 }

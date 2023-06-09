@@ -8,9 +8,9 @@ header {
   border-bottom: $border;
 
   div {
+    padding: 0.8rem;
     display: flex;
     align-items: center;
-    padding: 0.8rem;
     gap: 0.8rem;
 
     h3 {
@@ -27,7 +27,7 @@ header {
       color: $gray-300;
 
       &.active {
-        background-color: $purple-mid;
+        background-color: $purple;
         color: $white;
       }
 

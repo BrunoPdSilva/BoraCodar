@@ -10,7 +10,7 @@ export function HeaderItem({ number, text, page }: Props) {
   function getStatus() {
     if (page === Number(number)) return "active";
     if (page > Number(number)) return "filled";
-    return "disabled"
+    return "disabled";
   }
 
   return (
