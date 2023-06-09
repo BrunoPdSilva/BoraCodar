@@ -26,6 +26,7 @@ body {
 
 #root {
   width: 100%;
+  padding: 2rem;
 }
 
 h2,
@@ -46,4 +47,10 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+}
+
+@media (max-width: 470px) {
+  :root {
+    font-size: 56%;
+  }
 }
