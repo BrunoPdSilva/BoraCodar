@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { CaretRight } from "phosphor-react";
 import { HeaderItem } from "./components/HeaderItem";
 import { FormInputField } from "./components/FormInputField";
 import { Button } from "./components/Button";
+import { formFields } from "./utils/formFields";
 
 export function App() {
   const [formPage, setFormPage] = useState(1);
+  const [state, setState] = useState({});
 
   function decrease() {
     if (formPage >= 2) setFormPage(prev => prev - 1);
@@ -14,26 +16,22 @@ export function App() {
   function increase() {
     if (formPage <= 2) setFormPage(prev => prev + 1);
   }
-
   function getFormFields() {
-    const fields: JSX.Element[][] = [
-      [
-        <FormInputField label="Nome" placeholder="Como prefere ser chamado" />,
-        <FormInputField label="Telefone" placeholder="Digite seu número de WhatsApp" />,
-        <FormInputField label="E-mail" placeholder="Digite seu e-mail" />
-      ],
-      [
-        <FormInputField label="Nome da empresa" placeholder="Qual é o nome da empresa" />,
-        <FormInputField label="Número de funcionários" placeholder="Digite o número de colaboradores" />,
-        <FormInputField label="Sobre seu negócio" placeholder="Fale um pouco sobre seus produtos ou serviços" />
-      ],
-      [
-        <FormInputField label="Objetivos do projeto" placeholder="Descreva quais os objetivos desse projeto" />
-      ]
-    ];
-    return fields[formPage - 1];
+    return formFields[formPage - 1].map((field, index) => (
+      <FormInputField
+        key={index}
+        label={field.label}
+        placeholder={field.placeholder}
+        formValues={state}
+        setFormValues={setState}
+      />
+    ));
   }
   
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+    console.log(state);
+  }
 
   return (
     <main>
@@ -44,7 +42,7 @@ export function App() {
         <CaretRight size={20} color="#323238" weight="bold" />
         <HeaderItem number="3" text="Projeto"  page={formPage} />
       </header>
-      <form>
+      <form onSubmit={handleSubmit}>
         {getFormFields()}
         <div className="action-buttons">
           {formPage > 1 && <Button type="secondary" func={decrease} text="VOLTAR"/>}
