@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+
+  height: 100svh;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 3.2rem;
+  font-weight: 300;
+  line-height: 3.8rem;
+  color: #fff;
+}
