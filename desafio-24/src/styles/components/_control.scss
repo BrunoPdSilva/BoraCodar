@@ -1,0 +1,83 @@
+@import "../utilities/colors";
+
+.controls {
+  width: 32.1rem;
+  margin: 9rem auto;
+  display: grid;
+  gap: 6.2rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    svg {
+      min-width: 2.4rem;
+      height: 2.4rem;
+    }
+
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 0.5rem;
+      border-radius: 1.2rem;
+
+      &::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        appearance: none;
+        background: $gray;
+        border-radius: 1.2rem;
+        height: 0.5rem;
+      }
+
+      &.hue::-webkit-slider-runnable-track {
+        background: $gradient;
+      }
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1.8rem;
+        height: 1.8rem;
+        background: $app-bg;
+        border-radius: 50%;
+        border: 0.15rem solid $white;
+        transform: translateY(-30%);
+        cursor: pointer;
+
+        &:hover {
+          border: 0.2rem solid $white;
+        }
+      }
+
+      &.hue::-webkit-slider-thumb {
+        background: var(--thumb-color);
+      }
+
+      &::-moz-range-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 1.8rem;
+        height: 1.8rem;
+        background: $app-bg;
+        border-radius: 50%;
+        border: 0.15rem solid $white;
+        transform: translateY(-30%);
+        cursor: pointer;
+
+        &:hover {
+          border: 0.2rem solid $white;
+        }
+      }
+
+      &::-moz-range-track {
+        background: $gradient;
+      }
+
+      &.hue::-moz-range-thumb {
+        background: var(--thumb-color);
+      }
+    }
+  }
+}

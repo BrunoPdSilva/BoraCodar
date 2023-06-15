@@ -1,6 +1,8 @@
+@import "../utilities/colors";
+
 #root {
   display: grid;
   min-height: 100svh;
   place-items: center;
-  background: #242424;
+  background: $main-bg;
 }

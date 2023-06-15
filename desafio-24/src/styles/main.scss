@@ -1,4 +1,7 @@
-@import "base/reset";
+@use "base/reset";
 
-@import "layout/main";
-@import "layout/app";
+@use "components/circle";
+@use "components/control";
+
+@use "layout/main";
+@use "layout/app";
