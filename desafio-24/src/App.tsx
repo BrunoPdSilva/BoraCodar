@@ -1,18 +1,11 @@
 import { Palette, Sun, CircleHalf } from "phosphor-react";
 import { useState } from "react";
+import { Circle } from "./components/Circle";
+import { Control } from "./components/Control";
+import { HSL } from "./types/global";
 
-type HSL = {
-  hue: number;
-  brightness: number;
-  saturation: number;
-};
-
-function App() {
-  const [hsl, setHsl] = useState<HSL>({
-    hue: 272,
-    saturation: 98,
-    brightness: 50,
-  });
+export function App() {
+  const [hsl, setHsl] = useState<HSL>({ hue: 272, saturation: 98, brightness: 50 });
 
   function handleHueChange(e: React.ChangeEvent<HTMLInputElement>) {
     setHsl({ ...hsl, hue: parseInt(e.target.value) });
@@ -28,61 +21,31 @@ function App() {
 
   return (
     <div id="app">
-      <div className="circle-container">
-        <div
-          className="circle"
-          style={{
-            backgroundColor: `hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.brightness}%, 1)`,
-            boxShadow: `0rem 0rem 5.3rem 1.3rem hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.brightness}%, 0.91)`,
-          }}
-        ></div>
-      </div>
+      <Circle hsl={hsl} />
 
       <h1>Ajustes de iluminação</h1>
 
       <section className="controls">
-        <div>
-          <Palette size={24} color="#ffffff" />
-          <input
-            className="hue"
-            type="range"
-            min={0}
-            max={360}
-            step={1}
-            value={hsl.hue}
-            onChange={e => handleHueChange(e)}
-            style={
-              {
-                "--thumb-color": `hsl(${hsl.hue}, ${hsl.saturation}%, ${hsl.brightness}%, 1)`,
-              } as React.CSSProperties
-            }
-          />
-        </div>
-        <div>
-          <CircleHalf size={24} color="#ffffff" />
-          <input
-            type="range"
-            min={0}
-            max={100}
-            step={1}
-            value={hsl.brightness}
-            onChange={e => handleBrightnessChange(e)}
-          />
-        </div>
-        <div>
-          <Sun size={24} color="#ffffff" />
-          <input
-            type="range"
-            min={0}
-            max={100}
-            step={1}
-            value={hsl.saturation}
-            onChange={e => handleSaturationChange(e)}
-          />
-        </div>
+        <Control
+          hsl={hsl}
+          handleChange={handleHueChange}
+          isHue={true}
+          icon={<Palette />}
+          value={hsl.hue}
+        />
+        <Control
+          hsl={hsl}
+          handleChange={handleSaturationChange}
+          icon={<CircleHalf />}
+          value={hsl.saturation}
+        />
+        <Control
+          hsl={hsl}
+          handleChange={handleBrightnessChange}
+          icon={<Sun />}
+          value={hsl.brightness}
+        />
       </section>
     </div>
   );
 }
-
-export default App;
