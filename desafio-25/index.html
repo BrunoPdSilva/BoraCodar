@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Kanit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>VR Player</title>
+  </head>
+  <body>
+    <main>
+      <div class="side-menu">
+        <button>
+          <img src="./assets/play.svg" alt="play Icon" />
+        </button>
+        <button>
+          <img src="./assets/accessibility.svg" alt="accessibility Icon" />
+        </button>
+        <button>
+          <img src="./assets/albums.svg" alt="albums Icon" />
+        </button>
+        <button>
+          <img src="./assets/search.svg" alt="search Icon" />
+        </button>
+      </div>
+      <div class="column">
+        <nav>
+          <div class="actions">
+            <button class="active">
+              <img src="./assets/sidebar.svg" alt="sidebar icon" />
+            </button>
+            <button><img src="./assets/chevron-left.svg" alt="chevron icon" /></button>
+            <button><img src="./assets/chevron-right.svg" alt="chevron icon" /></button>
+          </div>
+
+          <div class="address">
+            <img src="./assets/text.svg" alt="text icon" />
+            <p>
+              <img src="./assets/lock.svg" alt="lock icon" />
+              rocketseat.com
+            </p>
+            <img src="./assets/refresh.svg" alt="refresh icon" />
+          </div>
+
+          <div class="actions">
+            <button><img src="./assets/share.svg" alt="share icon" /></button>
+            <button><img src="./assets/add.svg" alt="add icon" /></button>
+            <button><img src="./assets/copy.svg" alt="copy icon" /></button>
+          </div>
+        </nav>
+
+        <iframe
+          class="player"
+          width="960"
+          height="540"
+          src="https://www.youtube.com/embed/uL6nu0-zhu0?controls=0"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+        <div class="interaction">
+          <div class="circle"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

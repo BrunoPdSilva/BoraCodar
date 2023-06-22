@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%), url(../assets/background.png) no-repeat;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+body main {
+  max-width: 104.8rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+body main button {
+  width: 4rem;
+  height: 4rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 0;
+  background: 0;
+  transition: background 0.3s ease-in-out;
+}
+body main button img {
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+body main button:hover, body main button:focus-visible {
+  background: rgba(255, 255, 255, 0.2);
+}
+body main button:hover img, body main button:focus-visible img {
+  opacity: 1;
+}
+body main .side-menu {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  border-radius: 8rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0rem 0.8rem 0.4rem 0rem rgba(0, 0, 0, 0.05), 0rem 0.1rem 0.1rem 0rem rgba(255, 255, 255, 0.3) inset, 0rem -0.1rem 0.1rem 0rem rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(1.6rem);
+}
+body main .column {
+  max-width: 96rem;
+  width: 100%;
+  min-height: 66rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+}
+body main .column nav {
+  width: 100%;
+  max-width: 81.6rem;
+  height: 6.4rem;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+  border-radius: 8rem;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0rem 0.8rem 0.4rem 0rem rgba(0, 0, 0, 0.05), 0rem 0.1rem 0.1rem 0rem rgba(255, 255, 255, 0.3) inset, 0rem -0.1rem 0.1rem 0rem rgba(255, 255, 255, 0.1) inset;
+  backdrop-filter: blur(1.6rem);
+}
+body main .column nav .actions {
+  display: flex;
+  gap: 1.6rem;
+}
+body main .column nav .actions .active {
+  background: rgba(255, 255, 255, 0.2);
+}
+body main .column nav .actions .active img {
+  opacity: 1;
+}
+body main .column nav .address {
+  display: flex;
+  width: 44rem;
+  height: 4.8rem;
+  padding: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 80px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px -1px 0px 0px rgba(255, 255, 255, 0.1) inset, 0px 1px 0px 0px rgba(0, 0, 0, 0.2) inset;
+}
+body main .column nav .address p {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+body main .column .player {
+  width: 100%;
+  height: 54rem;
+  border-radius: 3.2rem;
+  box-shadow: 0rem 0.8rem 0.4rem 0rem rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+body main .column .interaction {
+  display: flex;
+  gap: 1.6rem;
+}
+body main .column .interaction .circle {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+}
+body main .column .interaction .line {
+  width: 8.6rem;
+  height: 0.8rem;
+  border-radius: 8rem;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/*# sourceMappingURL=styles.css.map */
