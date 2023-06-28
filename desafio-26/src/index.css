@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("./fonts/source-sans-pro.regular.ttf") format("ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("./fonts/source-serif-pro.regular.ttf") format("ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Source Serif Pro";
+  src: url("./fonts/source-serif-pro.bold.ttf") format("ttf");
+  font-weight: 700;
+}
+@tailwind utilities;
