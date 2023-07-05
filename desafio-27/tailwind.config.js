@@ -19,7 +19,7 @@ export default {
     },
     extend: {
       backgroundImage: {
-        stars: "url('./src/assets/stars.svg')",
+        stars: "url('/src/assets/stars.svg')",
         'gradient-purple': 'linear-gradient(45deg, #BF7BFB, #212187)',
       },
     },
