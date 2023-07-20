@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .img-height {
+    height: calc(100vh - 16px);
+  }
+
+  .shadow-br {
+    box-shadow: 0px 0px 0px 8px #FFF inset;
+  }
+
+  .img-width {
+    max-width: calc(100vw - 16px);
+  }
+
+  .thumb::-webkit-slider-thumb {
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    background-image: url("./assets/drag.svg");
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .thumb::-moz-range-thumb {
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    background-image: url("./assets/drag.svg");
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .thumb::-ms-thumb {
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    background-image: url("./assets/drag.svg");
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
