@@ -4,10 +4,11 @@ export default {
   theme: {
     colors: {
       purple: "#8323FF",
-      pink: "##FF2DAF",
-      yellow: "##FEEA35",
+      pink: "#FF2DAF",
+      yellow: "#FEEA35",
       white: "#FFFFFF",
       gray: {
+        50: "#8B8D9B",
         100: "#373745",
         200: "#2B2B37",
         300: "#1E1F28",
@@ -20,7 +21,9 @@ export default {
     fontFamily: {
       outfit: ["Outfit", "sans-serif"],
     },
-    extend: {},
+    extend: {
+      border: {},
+    },
   },
   plugins: [],
 };
