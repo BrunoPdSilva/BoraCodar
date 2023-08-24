@@ -1,6 +1,7 @@
-import "./globals.css";
 import type { Metadata } from "next";
+import { Banner } from "@/components/Banner";
 import { Inter } from "next/font/google";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} relative bg-gray-600`}>
+        <Banner />
+        {children}
+      </body>
     </html>
   );
 }

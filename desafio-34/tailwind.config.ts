@@ -8,6 +8,7 @@ const config: Config = {
   ],
   theme: {
     colors: {
+      gradient: "#090909",
       gray: {
         100: "#FBF9FE",
         200: "#AFABB6",
@@ -36,7 +37,11 @@ const config: Config = {
       second_green: "#8CAD51",
       second_green_dark: "#1C2015",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        banner: "url(/banner.svg)",
+      },
+    },
   },
   plugins: [],
 };
