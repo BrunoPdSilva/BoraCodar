@@ -16,9 +16,9 @@ export function Checkbox({ isCompleted }: CheckboxProps) {
       <input
         type="checkbox"
         className={clsx(
-          "peer h-4 w-4 cursor-pointer appearance-none rounded-sm border transition-colors duration-200 ease-in-out checked:border-green-200 checked:bg-green-200 hover:bg-purple-200 checked:hover:bg-green-100 checked:focus:bg-green-100",
+          "peer h-4 w-4 cursor-pointer appearance-none rounded-sm border transition-colors duration-200 ease-in-out checked:border-green-200 checked:bg-green-200 hover:bg-purple-200 checked:hover:bg-green-100 checked:focus-visible:bg-green-100",
           {
-            "border-purple-100 hover:bg-purple-200 focus:bg-purple-200":
+            "border-purple-100 hover:bg-purple-200 focus-visible::bg-purple-200":
               checked === false,
           },
         )}
