@@ -9,3 +9,19 @@
     margin: 0;
   }
 }
+
+@layer utilities {
+  .dropdown:has(input[type="checkbox"]:focus-visible) label,
+  .dropdown:has(input[type="checkbox"]:checked) label {
+    @apply text-purple-100 transition-colors duration-200 ease-in-out
+  }
+
+  .dropdown-trigger:has(input[type="checkbox"]:focus-visible) svg,
+  .dropdown-trigger:has(input[type="checkbox"]:checked) svg {
+    @apply text-purple-100 rotate-180 transition-all duration-200 ease-in-out
+  }
+
+  .dropdown:has(input[type="checkbox"]:checked) .dropdown-options {
+    @apply block
+  }
+}
