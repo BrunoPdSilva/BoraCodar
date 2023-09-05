@@ -36,4 +36,11 @@ export async function toggleIsCompleted(checkboxValue: boolean, id: string) {
   });
 
   console.log(res);
+  revalidatePath("/");
+}
+
+export async function deleteItem(id: string) {
+  const res = await prisma.product.delete({ where: { id } });
+  revalidatePath("/");
+  console.log(res);
 }

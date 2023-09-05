@@ -1,6 +1,6 @@
-import { MoreVertical } from "lucide-react";
 import { Checkbox } from "./Checkbox";
 import { icons } from "@/utils/dropdownOptions";
+import { DeleteItem } from "./DeleteItem";
 
 interface ListItemProps {
   id: string;
@@ -31,12 +31,20 @@ export function ListItem(props: ListItemProps) {
   }
 
   return (
-    <li className="flex w-full items-center justify-between rounded-lg border border-gray-300 bg-gray-400 p-4">
+    <li
+      className={`flex w-full items-center justify-between rounded-lg border border-gray-300 bg-gray-400 p-4 ${
+        props.isCompleted ? "opacity-60" : ""
+      }`}
+    >
       <section className="flex items-center gap-5">
         <Checkbox isCompleted={props.isCompleted} id={props.id} />
 
         <div>
-          <h2 className="mb-[2px] text-sm font-bold leading-[130%] text-gray-100">
+          <h2
+            className={`mb-[2px] text-sm font-bold leading-[130%] text-gray-100 ${
+              props.isCompleted ? "line-through" : ""
+            }`}
+          >
             {props.name}
           </h2>
           <p className="text-xs leading-[130%] text-gray-200">
@@ -54,7 +62,7 @@ export function ListItem(props: ListItemProps) {
           {icons[props.category.toLowerCase()]}
         </div>
 
-        <MoreVertical size={20} strokeWidth={2} className="text-purple-100" />
+        <DeleteItem id={props.id} />
       </section>
     </li>
   );
