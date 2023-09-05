@@ -1,12 +1,12 @@
 import { ItemInput } from "./ItemInput";
-import { printInfo } from "../app/actions";
+import { addItem } from "../app/actions";
 import { Plus } from "lucide-react";
 import { categoryOptions, quantityOptions } from "@/utils/dropdownOptions";
 import { Dropdown } from "./Dropdown";
 
 export function Form() {
   return (
-    <form action={printInfo} className="mb-10 mt-6 flex w-full flex-col gap-3">
+    <form action={addItem} className="mb-10 mt-6 flex w-full flex-col gap-3">
       <ItemInput />
 
       <div className="flex items-end gap-3">
@@ -21,7 +21,7 @@ export function Form() {
                 min={0}
                 name="quantity"
               />
-              <Dropdown.Trigger id="quantityDropdown" holder="UN." />
+              <Dropdown.Trigger id="quantityDropdown" holder="Un." />
               <Dropdown.Options>
                 {quantityOptions.map((option, i) => (
                   <Dropdown.Option key={i} value={option} name="quantityType" />
@@ -32,12 +32,17 @@ export function Form() {
         </div>
 
         <Dropdown.Root>
-          <Dropdown.Label label="Categoria" id="category" />
+          <Dropdown.Label label="Categoria" id="categoryDropdown" />
           <div className="relative">
-            <Dropdown.Trigger id="category" fullRounded />
+            <Dropdown.Trigger id="categoryDropdown" fullRounded />
             <Dropdown.Options>
               {categoryOptions.map(({ label, icon }, i) => (
-                <Dropdown.Option key={i} value={label} icon={icon} name="category" />
+                <Dropdown.Option
+                  key={i}
+                  value={label}
+                  icon={icon}
+                  name="category"
+                />
               ))}
             </Dropdown.Options>
           </div>

@@ -9,6 +9,7 @@ export function ItemInput() {
         name="item"
         id="item"
         className="h-10 w-full rounded-md border border-gray-300 bg-gray-500 p-3 text-sm text-gray-100 outline-none transition-colors duration-300 ease-in-out focus:border-purple-100"
+        required
       />
     </label>
   );
