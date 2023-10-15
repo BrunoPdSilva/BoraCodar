@@ -14,6 +14,10 @@ export default {
           400: "#1D1B26",
           500: "#0F0E13",
         },
+        violet: {
+          100: "#4E4964",
+          200: "#1F2128"
+        }
       },
       fontFamily: { poppins: ["Poppins", "sans-serif"] },
     },
