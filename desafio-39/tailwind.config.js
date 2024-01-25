@@ -6,6 +6,7 @@ export default {
       purple: "#685ED9",
       purple_dark: "#4439C7",
       yellow_light: "#FAF2E7",
+      custom_yellow:  "#FFB703",
       yellow: "#F5D9AD",
       gray: {
         100: "#FAFAFA",

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Star } from "./Star"
 
 type StarRaterProps = {
@@ -5,7 +6,8 @@ type StarRaterProps = {
 }
 
 export function StarRater({ productName }: StarRaterProps) {
-  const rating = [1, 2, 3, 4, 5]
+  const [selected, setSelected] = useState(0)
+  const [starsHovered, setStarsHovered] = useState(0)
 
   return (
     <div className="flex flex-col text-center font-inter mb-10">
@@ -21,9 +23,17 @@ export function StarRater({ productName }: StarRaterProps) {
       </p>
 
       <section>
-        <div className="flex justify-between">
-          {rating.map(value => (
-            <Star key={value} value={value} />
+        <div
+          className="flex justify-between"
+          onMouseLeave={() => setStarsHovered(0)}
+        >
+          {[1, 2, 3, 4, 5].map(starValue => (
+            <Star
+              key={starValue}
+              isActive={starValue <= selected || starValue <= starsHovered}
+              onClick={() => setSelected(starValue)}
+              onMouseEnter={() => setStarsHovered(starValue)}
+            />
           ))}
         </div>
 

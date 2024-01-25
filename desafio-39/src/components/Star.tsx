@@ -1,16 +1,21 @@
 import { Star as StarIcon } from "@phosphor-icons/react"
 
 type StarProps = {
-  value: number
+  isActive: boolean
+  onClick(): void
+  onMouseEnter(): void
 }
 
-export function Star({ value }: StarProps) {
+export function Star({ isActive, onClick, onMouseEnter }: StarProps) {
   return (
     <button
-      className="text-gray-200 hover:text-yellow transition-colors duration-75 ease-in p-2"
-      data-value={value}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      className={`${
+        isActive ? "text-custom_yellow" : "text-gray-200"
+      } p-2 transition-colors duration-75 ease-in-out`}
     >
-      <StarIcon size={32} weight="fill" />
+      <StarIcon size={32} weight="fill" className="pointer-events-none" />
     </button>
   )
 }
